@@ -2,24 +2,28 @@ const mongoose = require('mongoose');
 const db = require('./index.js');
 const Schema = mongoose.Schema;
 
-const schemas = {
-  listing: new Schema({
-    name: String, // 
-    type: String, //stay, experience etc...
-    state: String,
-    country: String,
-    city: String,
-    images: [{ image: String }], //imageurls
-  }),
+const review = new Schema({
+  title: String,
+  rating: Number, //star rating from 1-5
+  user: String,
+  body: String,
+  pics: [{ url: String }],
+  helpfulCount: Number,
+  unhelpfulCount: Number,
+  recommended: Boolean,
+  verified: Boolean,
+  purchasedDate: Date,
+  comments: [{
+    title: String,
+    date: {type: Date, default: Date.now},
+    user: String,
+    helpfulCount: String,
+    unhelpfulCount: String,
+    body: String
+  }]
+}, 
+{
+  timestamps: true
+});
 
-  languages: new Schema ({
-    name: String,
-    country: String
-  }),
-
-  currency: new Schema ({
-    name: String,
-    symbol: String
-  })
-};
-
+module.exports = review;
