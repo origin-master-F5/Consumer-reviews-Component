@@ -1,8 +1,8 @@
 {
-  "name": "",
+  "name": "reviews",
   "version": "",
   "description": "",
-  "author": "",
+  "author": "Vargas",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
