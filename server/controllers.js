@@ -30,5 +30,29 @@ module.exports = {
         query.getLowRate()
             .then((data) => res.status(200).send(data))
             .catch((err) => res.status(400).send(err));
-    }
+    },
+    addHelpCount: (req, res) => {
+        let _id = req.params.id
+        query.addHelp({_id})
+            .then((data) => res.status(200).send(data))
+            .catch((err) => res.status(400).send(err));
+    },
+    minusHelpCount: (req, res) => {
+        let _id = req.params.id
+        query.minusHelp({_id})
+            .then((data) => res.status(200).send(data))
+            .catch((err) => res.status(400).send(err));
+    },
+    addUnhelpCount: (req, res) => {
+        let _id = req.params.id
+        query.addUnhelp({_id})
+            .then((data) => res.status(200).send(data))
+            .catch((err) => res.status(400).send(err));
+    },
+    minusUnhelpCount: (req, res) => {
+        let _id = req.params.id
+        query.minusUnhelp({_id})
+            .then((data) => res.status(200).send(data))
+            .catch((err) => res.status(400).send(err));
+    },
 };
