@@ -10,6 +10,7 @@ const reviewSchema = new Schema({
   pics: [{ url: String }],
   helpfulCount: {type: Number, default: 0},
   unhelpfulCount: {type: Number, default: 0},
+  helpScore: this.helpfulCount - this.unhelpfulCount,
   recommended: Boolean,
   verified: Boolean,
   purchasedDate: Date,
