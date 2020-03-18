@@ -29,14 +29,40 @@ let happy = {
     pics: [{url: 'https://www.pokemon-sunmoon.com/media/uploads/og_images/facebook-share-image-usa.jpg'}],
     recommended: true,
     verified: true,
-    purchasedDate: new Date('May 12, 2020 12:15:30'),
+    purchasedDate: new Date('March 12, 2020 12:15:30'),
     comments: [{
         user: 'Blake',
         body: 'dude, you are much cooler than the last guy i commented on'
     }]
 }
 
-const samples = [unhappy, happy];
+let average = {
+    title: 'Mostly meh',
+    rating: 3,
+    user: 'Joe',
+    body: 'I thought the game was fine.  Not great but not terrible either. Not as awesome as the rest of the games in my collection',
+    pics: [{url: 'https://i.ytimg.com/vi/rNMDQuRHUkE/maxresdefault.jpg'}, {url: 'https://i.pinimg.com/564x/bb/19/72/bb1972cbb87dbd0171be319d983ca438.jpg'}],
+    recommended: false,
+    verified: true,
+    purchasedDate: new Date('June 11, 2019 05:25:43'),
+    comments: []
+}
+
+let eager = {
+    title: 'Not purchased but i love it!',
+    rating: 5,
+    user: 'Billy',
+    body: 'Instant classic and one of the best games of all time.  I have not bought it yet but i cannot wait!!!',
+    pics: [{url: 'https://i.ytimg.com/vi/rNMDQuRHUkE/maxresdefault.jpg'}, {url: 'https://i.pinimg.com/564x/bb/19/72/bb1972cbb87dbd0171be319d983ca438.jpg'}],
+    recommended: true,
+    verified: false,
+    comments: [{
+        user: 'Tommy',
+        body: 'Can you talk about a game you do not own??'
+    }]
+}
+
+const samples = [unhappy, happy, average, eager];
 
 const insertSamples = function() {
     Review.create(samples)
