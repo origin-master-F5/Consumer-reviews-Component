@@ -8,8 +8,8 @@ const review = new Schema({
   user: String,
   body: String,
   pics: [{ url: String }],
-  helpfulCount: Number,
-  unhelpfulCount: Number,
+  helpfulCount: {type: Number, default: 0},
+  unhelpfulCount: {type: Number, default: 0},
   recommended: Boolean,
   verified: Boolean,
   purchasedDate: Date,
@@ -17,8 +17,8 @@ const review = new Schema({
     title: String,
     date: {type: Date, default: Date.now},
     user: String,
-    helpfulCount: String,
-    unhelpfulCount: String,
+    helpfulCount: {type: Number, default: 0},
+    unhelpfulCount: {type: Number, default: 0},
     body: String
   }]
 }, 
