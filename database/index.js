@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/airbnb', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/bestbuy', {useNewUrlParser: true});
 
 const db = mongoose.connection;
 
