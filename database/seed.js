@@ -1,4 +1,6 @@
 // example data for reviews
+const db = require('./index.js');
+const Review = require('./schemas.js');
 
 let unhappy = {
     title: 'Underwhelming tbh',
@@ -36,3 +38,9 @@ let happy = {
 
 const samples = [unhappy, happy];
 
+const insertSamples = function() {
+    Review.create(samples)
+      .then(() => db.disconnect());
+  };
+  
+  insertSamples();
