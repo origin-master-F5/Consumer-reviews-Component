@@ -31,6 +31,7 @@ module.exports = {
             .then((data) => res.status(200).send(data))
             .catch((err) => res.status(400).send(err));
     },
+    //help/unhelp buttons
     addHelpCount: (req, res) => {
         let _id = req.params.id
         query.addHelp({_id})
@@ -55,4 +56,29 @@ module.exports = {
             .then((data) => res.status(200).send(data))
             .catch((err) => res.status(400).send(err));
     },
+    //comments' unhelp/help button
+    commentAddHelpCount: (req, res) => {
+        let _id = req.params.id
+        query.commentAddHelp({'comments._id': _id})
+            .then((data) => res.status(200).send(data))
+            .catch((err) => res.status(400).send(err));
+    },
+    commentMinusHelpCount: (req, res) => {
+        let _id = req.params.id
+        query.commentMinusHelp({'comments._id': _id})
+            .then((data) => res.status(200).send(data))
+            .catch((err) => res.status(400).send(err));
+    },
+    commentAddUnhelpCount: (req, res) => {
+        let _id = req.params.id
+        query.commentAddUnhelp({'comments._id': _id})
+            .then((data) => res.status(200).send(data))
+            .catch((err) => res.status(400).send(err));
+    },
+    commentMinusUnhelpCount: (req, res) => {
+        let _id = req.params.id
+        query.commentMinusUnhelp({'comments._id': _id})
+            .then((data) => res.status(200).send(data))
+            .catch((err) => res.status(400).send(err));
+    }
 };

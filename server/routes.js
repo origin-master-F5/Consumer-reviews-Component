@@ -15,4 +15,10 @@ router.patch('/addHelp/:id', controllers.addHelpCount)
 router.patch('/minusHelp/:id', controllers.minusHelpCount)
 router.patch('/addUnhelp/:id', controllers.addUnhelpCount)
 router.patch('/minusUnhelp/:id', controllers.minusUnhelpCount)
+
+//all changes to comments' help/unhelp buttons
+router.patch('/commentAddHelp/:id', controllers.commentAddHelpCount)
+router.patch('/commentMinusHelp/:id', controllers.commentMinusHelpCount)
+router.patch('/commentAddUnhelp/:id', controllers.commentAddUnhelpCount)
+router.patch('/commentMinusUnhelp/:id', controllers.commentMinusUnhelpCount)
 module.exports = router;
