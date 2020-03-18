@@ -9,6 +9,8 @@ let unhappy = {
     body: 'i thought this game was going to be amazing but it really was not.  Nice job making a game we have already seen before.  Sheesh, if i wanted to play an old dumb game, i would have played tag with the homies.  Do not buy if you enjoy originality!!!',
     pics: [],
     recommended: false,
+    helpfulCount: 2,
+    unhelpfulCount: 1,
     verified: false,
     purchasedDate: new Date('August 19, 2019 23:15:30'),
     comments: [{
@@ -28,6 +30,7 @@ let happy = {
     body: 'Easily one of the best games i have played in a while.  You should all buy it!!!! pls!',
     pics: [{url: 'https://www.pokemon-sunmoon.com/media/uploads/og_images/facebook-share-image-usa.jpg'}],
     recommended: true,
+    helpfulCount: 3,
     verified: true,
     purchasedDate: new Date('March 12, 2020 12:15:30'),
     comments: [{
@@ -55,6 +58,7 @@ let eager = {
     body: 'Instant classic and one of the best games of all time.  I have not bought it yet but i cannot wait!!!',
     pics: [{url: 'https://i.ytimg.com/vi/rNMDQuRHUkE/maxresdefault.jpg'}, {url: 'https://i.pinimg.com/564x/bb/19/72/bb1972cbb87dbd0171be319d983ca438.jpg'}],
     recommended: true,
+    unhelpfulCount: 4,
     verified: false,
     comments: [{
         user: 'Tommy',
