@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/bestbuy', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/bestbuy', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 const db = mongoose.connection;
 
