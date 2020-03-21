@@ -1,4 +1,9 @@
 import React from 'react';
+import Summary from './Summary.jsx'
+import BarGraph from './BarGraph.jsx'
+import ProConList from './ProConList.jsx'
+
+
 
 
 class Snapshot extends React.Component {
@@ -10,7 +15,9 @@ class Snapshot extends React.Component {
     render() {
         return (
             <div>
-
+                <Summary />
+                <BarGraph />
+                <ProConList />
             </div>
         );
     }
