@@ -1,4 +1,7 @@
 import React from 'react';
+import Pros from './Pros.jsx';
+import Cons from './Cons.jsx';
+
 
 
 class ProConList extends React.Component {
@@ -10,7 +13,8 @@ class ProConList extends React.Component {
     render() {
         return (
             <div>
-
+                <Pros />
+                <Cons />
             </div>
         );
     }
