@@ -1,4 +1,7 @@
 import React from 'react';
+import Verified from './Verified.jsx';
+import Search from './Search.jsx';
+import Sort from './Sort.jsx';
 
 
 class Filter extends React.Component {
@@ -10,7 +13,9 @@ class Filter extends React.Component {
     render() {
         return (
             <div>
-
+                <Verified />
+                <Search />
+                <Sort />
             </div>
         );
     }
