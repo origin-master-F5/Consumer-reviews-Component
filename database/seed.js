@@ -253,12 +253,13 @@ let samples = [
     { "title": "nibh. Donec", "rating": 5, "user": "Nita", "body": "magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer", "pics": [{ url: "https pic" }], "helpfulCount": 47, "unhelpfulCount": 65, "recommended": false, "verified": true, "purchasedDate": new Date("March 9, 2019"), "comments": [] },
     { "title": "neque vitae semper egestas, urna", "rating": 1, "user": "McKenzie", "body": "felis. Donec tempor, est ac mattis semper, dui lectus rutrum urna,", "pics": [{ url: "https pic" }], "helpfulCount": 94, "unhelpfulCount": 67, "recommended": false, "verified": true, "purchasedDate": new Date("September 6, 2019"), "comments": [] },
     { "title": "Proin vel arcu eu odio tristique", "rating": 2, "user": "Xandra", "body": "iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque", "pics": [{ url: "https pic" }], "helpfulCount": 67, "unhelpfulCount": 34, "recommended": false, "verified": false, "purchasedDate": new Date("November 21, 2019"), "comments": [] },
-    { "title": "Nunc mauris", "rating": 4, "user": "Tatum", "body": "nibh. Aliquam ornare, libero at", "pics": [{ url: "https pic" }], "helpfulCount": 55, "unhelpfulCount": 28, "recommended": false, "verified": false, "purchasedDate": new Date("January 31, 2019"), "comments": [] }
+    { "title": "Just a test", "rating": 4, "user": "Tatum", "body": "nibh. Aliquam ornare, libero at", "pics": [{ url: "https pic" }], "helpfulCount": 55, "unhelpfulCount": 28, "recommended": false, "verified": false, "purchasedDate": new Date("January 31, 2019"), "comments": [] }
 ]
 
-const insertSamples = function () {
-    Review.create(samples)
-        .then(() => db.disconnect());
-};
-
-insertSamples();
+const insertSamples = () => {
+    Review.deleteMany({})
+    .then(Review.create(samples))
+    .then(() => console.log('ready to close mongo!'))
+  }
+  
+  insertSamples();
