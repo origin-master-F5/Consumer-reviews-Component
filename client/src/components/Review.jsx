@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Pic from './Pic.jsx';
+import Comment from './Comment.jsx';
 
 class Review extends React.Component {
     constructor(props) {
@@ -10,7 +11,8 @@ class Review extends React.Component {
     render() {
         return (
             <div>
-
+                <Pic />
+                <Comment />
             </div>
         );
     }
