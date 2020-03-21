@@ -4,6 +4,7 @@ import Gallery from './Gallery.jsx';
 import Filter from './Filter.jsx';
 import Review from './Review.jsx';
 
+//Review Component will be mapped to the DOM later
 
 class App extends React.Component {
     constructor(props) {
