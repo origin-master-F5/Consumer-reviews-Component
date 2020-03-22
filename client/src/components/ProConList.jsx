@@ -12,7 +12,8 @@ class ProConList extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="proconlist-parent-div">
+                <h2>hello from inside PROCONLIST</h2>
                 <Pros />
                 <Cons />
             </div>

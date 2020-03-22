@@ -9,8 +9,8 @@ class BarGraph extends React.Component {
     }
     render() {
         return (
-            <div>
-
+            <div className="bargraph-parent-div">
+                <h2>hello from inside BARGRAPH</h2>
             </div>
         );
     }

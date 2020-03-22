@@ -2,3 +2,45 @@
     font-size: 50px;
     color: royalblue;
 } */
+
+
+/***** SNAPSHOT COMPONENT *****/
+
+.snapshot-parent-div {
+    border-style: solid;
+    overflow: hidden;
+    width: 100%;
+}
+
+.summary-parent-div {
+    /* border-style: dashed; */
+    float: left;
+    height: 233px;
+    /* width: 223px; */
+    width: 15%;
+}
+
+.bargraph-parent-div {
+    /* border-color: salmon; */
+    /* border-style: double; */
+    float: left;
+    height: 233px;
+    width: 40%;
+    /* width: 360px; */
+    /* clear: both; */
+}
+
+.proconlist-parent-div {
+    /* border-style: dashed; */
+    height: 233px;
+    width: 31%;
+    /* width: 303px; */
+    float: left;
+}
+
+.snapshot-spacer {
+    /* border-style: solid; */
+    height: 233px;
+    float: left;
+    width: 7%;
+}
