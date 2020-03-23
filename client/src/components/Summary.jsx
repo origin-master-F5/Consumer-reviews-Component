@@ -9,7 +9,8 @@ class Summary extends React.Component {
             allReviews: [],
             rateAvg: 0,
             count: 0,
-            wouldRecommend: 0
+            wouldRecommend: 0,
+            starAvg: 0
         }
     }
     componentDidMount() {
@@ -19,7 +20,8 @@ class Summary extends React.Component {
                     allReviews: data.data,
                     rateAvg: this.getRateAvg(data.data),
                     count: data.data.length,
-                    wouldRecommend: this.getRecommendedPercent(data.data)
+                    wouldRecommend: this.getRecommendedPercent(data.data),
+                    starAvg: this.getStarAvg(data.data)
                 })
             })
         }
@@ -39,16 +41,27 @@ class Summary extends React.Component {
             }
             return Math.round((trueCount / arr.length) * 100)
         }
+        getStarAvg(arr) {
+            let starCount = 0;
+            for (let i = 0; i < arr.length; i++) {
+                starCount += arr[i].rating
+            }
+            return Math.round((starCount / (arr.length * 5)) * 100)
+        }
         render() {
             return (
                 <div className="summary-parent-div">
                     {/* <h2>hello from inside SUMMARY</h2> */}
                     <div className="summary-title">Customer rating</div>
                     <div className="rating-avg-num">{this.state.rateAvg}</div>
-                    <div className="summary-star-meter">*****</div>
-                    <div className="review-count">({this.state.count} Reviews)</div>
+                    <div>
+                        <div className="summary-star-meter">
+                            <span style={{width: `${this.state.starAvg}%`}} className="summary-star-meter-filler"></span>
+                        </div>
+                        <span className="review-count">({this.state.count} Reviews)</span>
+                    </div>
                     <div className="recommend-percent"><span className="percent-bold">{this.state.wouldRecommend}%</span> would recommend to a friend.</div>
-                    <div className="see-all-reviews">See all customer reviews</div>
+                    <a className="see-all-reviews" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">See all customer reviews</a>
                 </div>
             );
     }   

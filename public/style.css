@@ -3,11 +3,21 @@
     color: royalblue;
 } */
 
+* {
+    color: #040c13;
+    font-family: 'Roboto', sans-serif;
+    /* font-size: 13px; */
+    /* margin: 0;
+    padding: 0; */
+    padding-left: 0;
+    margin-left: 0;
+}
+
 
 /***** SNAPSHOT COMPONENT *****/
 
 .snapshot-parent-div {
-    border-style: solid;
+    /* border-style: solid; */
     overflow: hidden;
     width: 100%;
 }
@@ -17,7 +27,7 @@
     float: left;
     height: 233px;
     /* width: 223px; */
-    width: 15%;
+    width: 20%;
 }
 
 .bargraph-parent-div {
@@ -25,16 +35,13 @@
     /* border-style: double; */
     float: left;
     height: 233px;
-    width: 40%;
-    /* width: 360px; */
-    /* clear: both; */
+    width: 35%;
 }
 
 .proconlist-parent-div {
     /* border-style: dashed; */
     height: 233px;
     width: 31%;
-    /* width: 303px; */
     float: left;
 }
 
@@ -43,4 +50,55 @@
     height: 233px;
     float: left;
     width: 7%;
+}
+
+
+/***** SUMMARY COMPONENT *****/
+
+.summary-title {
+    font-size: 17px;
+    line-height: normal;
+    padding-bottom: 10px;
+}
+
+.rating-avg-num {
+    font-size: 40px;
+}
+
+.summary-star-meter {
+    background: url("./images/starRatingMeter.png") repeat-x;
+    height: 31px;
+    width: 140px;
+    margin: 0;
+    padding-left: 0;
+}
+
+.summary-star-meter-filler {
+    background: url("./images/starRatingMeter.png") repeat-x;
+    background-position: 0 100%;
+    float: left;
+    height: 31px;
+    /* display: block; */
+}
+
+.review-count {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.recommend-percent {
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.percent-bold {
+    font-weight: 700;
+}
+
+.see-all-reviews {
+    color: #0457c8;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
 }

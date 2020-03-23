@@ -15,7 +15,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="reviews-accordion">
-                <h2>React is rendering</h2>
+                <h2>Reviews</h2>
                 <Snapshot />
                 <Gallery />
                 <Filter />
