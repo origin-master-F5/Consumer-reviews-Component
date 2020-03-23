@@ -51,7 +51,6 @@ class Summary extends React.Component {
         render() {
             return (
                 <div className="summary-parent-div">
-                    {/* <h2>hello from inside SUMMARY</h2> */}
                     <div className="summary-title">Customer rating</div>
                     <div className="rating-avg-num">{this.state.rateAvg}</div>
                     <div>
