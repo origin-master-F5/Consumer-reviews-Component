@@ -114,3 +114,37 @@
     cursor: pointer;
     /* padding-bottom: 30px; */
 }
+
+
+/***** PROCONLIST COMPONENT *****/
+
+.proconlist-parent-div {
+    overflow: hidden;
+}
+
+.compare-list {
+    float: left;
+    width: 50%;
+}
+
+.filter-btn {
+    /* text-align: left; hover -> #0046be*/
+    color: #0046be;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 400;
+    white-space: nowrap;
+    /* padding-bottom: 2px;
+    padding-left: 12px;
+    padding-right: 12px; */
+    padding: 0 28px;
+    background: #fff;
+    border: 1px solid #c5cbd5;
+    text-align: center;
+    transition: all .3s ease-out 0s;
+}
+
+.filter-btn:hover {
+    background: #0046be;
+    color: #fff;
+}
