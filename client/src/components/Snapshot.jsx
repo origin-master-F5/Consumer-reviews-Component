@@ -14,9 +14,11 @@ class Snapshot extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="snapshot-parent-div">
                 <Summary />
+                <div className="snapshot-spacer"><p> </p></div>
                 <BarGraph />
+                <div className="snapshot-spacer"><p> </p></div>
                 <ProConList />
             </div>
         );
