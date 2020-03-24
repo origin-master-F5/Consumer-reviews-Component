@@ -23,30 +23,24 @@
 }
 
 .summary-parent-div {
-    /* border-style: dashed; */
     float: left;
     height: 233px;
-    /* width: 223px; */
     width: 20%;
 }
 
 .bargraph-parent-div {
-    /* border-color: salmon; */
-    /* border-style: double; */
     float: left;
     height: 233px;
     width: 35%;
 }
 
 .proconlist-parent-div {
-    /* border-style: dashed; */
     height: 233px;
     width: 31%;
     float: left;
 }
 
 .snapshot-spacer {
-    /* border-style: solid; */
     height: 233px;
     float: left;
     width: 7%;
@@ -103,6 +97,10 @@
     text-decoration: none;
 }
 
+.see-all-reviews:hover {
+    text-decoration: underline;
+}
+
 
 /***** BARGRAPH COMPONENT *****/
 
@@ -127,7 +125,7 @@
     width: 50%;
 }
 
-.filter-btn {
+.filter-word-btn {
     /* text-align: left; hover -> #0046be*/
     border-radius: 4px;
     color: #0046be;
@@ -148,7 +146,7 @@
     /* width: 100%; */
 }
 
-.filter-btn:hover {
+.filter-word-btn:hover {
     background: #0046be;
     color: #fff;
 }
