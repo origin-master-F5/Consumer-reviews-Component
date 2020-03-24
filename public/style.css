@@ -129,10 +129,12 @@
 
 .filter-btn {
     /* text-align: left; hover -> #0046be*/
+    border-radius: 4px;
     color: #0046be;
     cursor: pointer;
     font-size: 12px;
     font-weight: 400;
+    margin-right: 20px;
     white-space: nowrap;
     /* padding-bottom: 2px;
     padding-left: 12px;
@@ -141,7 +143,9 @@
     background: #fff;
     border: 1px solid #c5cbd5;
     text-align: center;
+    text-transform: capitalize;
     transition: all .3s ease-out 0s;
+    /* width: 100%; */
 }
 
 .filter-btn:hover {

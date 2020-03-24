@@ -54,8 +54,8 @@ class ProConList extends React.Component {
     render() {
         return (
             <div className="proconlist-parent-div">
-                <Pros />
-                <Cons />
+                <Pros filters={this.state.usedPros} />
+                <Cons filters={this.state.usedCons}/>
             </div>
         );
     }

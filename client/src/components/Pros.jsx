@@ -4,11 +4,9 @@ import React from 'react';
 const Pros = (props) => (
     <div className="compare-list">
         <div className="pros-title">Pros mentioned</div>
-        <button className="filter-btn">Word (count)</button>
-        <button className="filter-btn">Word (count)</button>
-        <button className="filter-btn">Word (count)</button>
-        <button className="filter-btn">Word (count)</button>
-        <button className="filter-btn">Word (count)</button>
+        {props.filters.map((word, index) => (
+            <button className="filter-btn" key={index}>{word[0]} ({word[1]})</button>
+        ))}
     </div>
 );
 
