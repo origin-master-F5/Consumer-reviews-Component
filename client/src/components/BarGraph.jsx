@@ -28,7 +28,6 @@ class BarGraph extends React.Component {
                     oneStar: this.getRatingCount(data.data, 1),
                     totalCount: data.data.length
                 })
-                console.log(this.state)
             })
 
     }

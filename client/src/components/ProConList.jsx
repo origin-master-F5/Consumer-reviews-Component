@@ -20,7 +20,7 @@ class ProConList extends React.Component {
         this.setState({
             usedPros: this.findWords(this.state.proWords, this.state.reviewWords),
             usedCons: this.findWords(this.state.conWords, this.state.reviewWords),
-        }, () => console.log('found words -->', this.state))
+        })
     }
     findWords(words, text) {
         let wordCounts = {}
