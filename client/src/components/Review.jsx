@@ -11,7 +11,7 @@ class Review extends React.Component {
     render() {
         return (
             <div>
-                <Pic />
+                {/* <Pic /> */}
                 <Comment />
             </div>
         );
