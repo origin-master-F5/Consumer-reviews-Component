@@ -14,10 +14,9 @@ class Gallery extends React.Component {
     componentDidMount() {
         axios.get('/reviews')
             .then((data) => {
-                console.log(data.data)
                 this.setState({
                     pics: this.getAllPics(data.data)
-                }, () => console.log('new state->', this.state))
+                })
             })
     }
     getAllPics(arr) {
@@ -27,7 +26,6 @@ class Gallery extends React.Component {
             if (arr[i].pics.length > 0) {
                 // let allPics = arr[i].pics.map(())
                 for (let j = 0; j < arr[i].pics.length; j++) {
-                    console.log('current spot->', j)
                     picArr = picArr.concat(arr[i].pics[j])
                 }
             }
@@ -35,7 +33,6 @@ class Gallery extends React.Component {
         return picArr
     }
     render() {
-        console.log(this.state.pics.length)
         return (
             <div className="gallery-wrapper">
                 <h3 className="gallery-title">Customer images</h3>

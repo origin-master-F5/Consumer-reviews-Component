@@ -195,3 +195,17 @@
 .image-thumbnail:hover {
     border: 2px solid #0046be;
 }
+
+
+/***** FILTER COMPONENT *****/
+
+.learn-more {
+    color: #0457c8;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
