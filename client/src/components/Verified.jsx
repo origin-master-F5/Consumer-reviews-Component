@@ -16,7 +16,7 @@ class Verified extends React.Component {
             .then((data) => {
                 this.setState({
                     verifiedCount: this.findVerifiedCount(data.data)
-                }, () => console.log(this.state))
+                })
             })
     }
     findVerifiedCount(arr) {
