@@ -3,10 +3,15 @@ import React from 'react';
 
 const Cons = (props) => (
     <div className="compare-list">
-        <div className="pros-title">Pros mentioned</div>
-        {props.filters.map((word, index) => (
-            <button className="filter-btn" key={index}>{word[0]} ({word[1]})</button>
-        ))}
+        <div className="pros-cons-title">Cons mentioned</div>
+        <ul>
+            {props.filters.map((word, index) => (
+                <li key={index}>
+                    <button className="filter-word-btn">{word[0]} ({word[1]})</button>
+                </li>
+            ))}
+
+        </ul>
     </div>
 );
 
