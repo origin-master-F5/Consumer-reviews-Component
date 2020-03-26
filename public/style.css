@@ -13,6 +13,43 @@ ul {
     list-style-type: none;
 }
 
+.bottom-border-line {
+    border-bottom: solid 1px #b1b6bd;
+}
+
+
+/***** APP COMPONENT *****/
+
+.all-components-wrapper {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.review-accordion {
+    cursor: pointer;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.reviews-title-text {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.down-chevron:after {
+    content: "\f078";
+    font-family: FontAwesome;
+    font-size: 22px;
+    float: right;
+}
+
+.up-chevron:after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-size: 22px;
+    float: right;
+}
+
 
 /***** SNAPSHOT COMPONENT *****/
 
