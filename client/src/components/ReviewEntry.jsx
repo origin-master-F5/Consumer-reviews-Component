@@ -14,10 +14,10 @@ class ReviewEntry extends React.Component {
         let posted = this.props.posted.substring(0, 10);
 
         return (
-            <div className="review-entry-wrapper">
+            <div className="review-entry-wrapper bottom-border-line">
                 <li>
-                    <div className="review-entry-user">
-                        <p>{this.props.user}</p>
+                    <div className="review-entry-user-wrapper">
+                        <p className="review-entry-user">{this.props.user}</p>
                     </div>
                     <div className="review-content-wrapper">
                         <div className="review-heading">

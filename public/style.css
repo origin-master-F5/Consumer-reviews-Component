@@ -16,6 +16,7 @@ button {
 
 .bottom-border-line {
     border-bottom: solid 1px #b1b6bd;
+    padding-bottom: 40px;
 }
 
 
@@ -139,6 +140,7 @@ button {
 
 .see-all-reviews:hover {
     text-decoration: underline;
+    color: #022d69;
 }
 
 
@@ -371,10 +373,15 @@ button {
 
 .learn-more:hover {
     text-decoration: underline;
+    color: #022d69;
 }
 
 
 /***** REVIEW COMPONENT *****/
+
+.review-list-info {
+    font-size: 13px;
+}
 
 .review-parent-div {
     width: 100%;
@@ -385,7 +392,7 @@ button {
     overflow: hidden;
 }
 
-.review-entry-user {
+.review-entry-user-wrapper {
     width: 25%;
     float: left;
 }
@@ -397,6 +404,20 @@ button {
 
 
 /***** REVIEW-ENTRY COMPONENT *****/
+
+.review-entry-user {
+    color: #0457c8;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.review-entry-user:hover {
+    color: #022d69;
+}
+
+.review-heading {
+    font-size: 18px;
+}
 
 .review-entry-info {
     overflow: hidden;
