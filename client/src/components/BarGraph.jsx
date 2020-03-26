@@ -13,7 +13,8 @@ class BarGraph extends React.Component {
             threeStar: 0,
             twoStar: 0,
             oneStar: 0,
-            totalCount: 0
+            totalCount: 0,
+            checked: false
         }
     }
     componentDidMount() {
@@ -43,28 +44,42 @@ class BarGraph extends React.Component {
     render() {
         return (
             <div className="bargraph-parent-div">
-                {/* Need to add CSS to these elements */}
                 <div className="rating-bars">
-                    <label className="five-graph rate-bar">
+                    <div className="checkbox">
+                        <i className="custom-checkbox-input"></i>
+                        <input type="checkbox" className="checkbox-filter" />
+                        
+                    </div>
+                    <div className="star-value">
+                        <span>5</span>
+                        <span className="single-star"></span>
+                    </div>
+                    <div className="progress-bar-wrapper">
+                        <span className="progress-bar"></span>
+                    </div>
+                    <span>{this.state.fiveStar}</span>
+                    
+
+                    {/* <label className="five-graph rate-bar">
                         <input className="five-filter-button" type="checkbox"/>
-                        [1-star-width={Math.round((this.state.fiveStar / this.state.totalCount) * 100)}%=====================================]-{this.state.fiveStar}
+                        [5-star-width={Math.round((this.state.fiveStar / this.state.totalCount) * 100)}%=====================================]-{this.state.fiveStar}
                     </label>
                     <label className="four-graph rate-bar">
                         <input className="four-filter-button" type="checkbox"/>
-                        [1-star-width={Math.round((this.state.fourStar / this.state.totalCount) * 100)}%=====================================]-{this.state.fourStar}
+                        [4-star-width={Math.round((this.state.fourStar / this.state.totalCount) * 100)}%=====================================]-{this.state.fourStar}
                     </label>
                     <label className="three-graph rate-bar">
                         <input className="three-filter-button" type="checkbox"/>
-                        [1-star-width={Math.round((this.state.threeStar / this.state.totalCount) * 100)}%=====================================]-{this.state.threeStar}
+                        [3-star-width={Math.round((this.state.threeStar / this.state.totalCount) * 100)}%=====================================]-{this.state.threeStar}
                     </label>
                     <label className="two-graph rate-bar">
                         <input className="two-filter-button" type="checkbox"/>
-                        [1-star-width={Math.round((this.state.twoStar / this.state.totalCount) * 100)}%=====================================]-{this.state.twoStar}
+                        [2-star-width={Math.round((this.state.twoStar / this.state.totalCount) * 100)}%=====================================]-{this.state.twoStar}
                     </label>
                     <label className="one-graph rate-bar">
                         <input className="one-filter-button" type="checkbox"/>
                         [1-star-width={Math.round((this.state.oneStar / this.state.totalCount) * 100)}%=====================================]-{this.state.oneStar}
-                    </label>
+                    </label> */}
                 </div>
             </div>
         );
