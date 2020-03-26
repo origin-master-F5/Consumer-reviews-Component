@@ -1,6 +1,7 @@
 import React from 'react';
 import Pic from './Pic.jsx';
 import Comment from './Comment.jsx';
+import moment from 'moment'
 
 class ReviewEntry extends React.Component {
     constructor(props) {
@@ -9,6 +10,9 @@ class ReviewEntry extends React.Component {
         this.state = {}
     }
     render() {
+        let purchased = this.props.purchased.substring(0, 10);
+        let posted = this.props.posted.substring(0, 10);
+
         return (
             <div className="review-entry-wrapper">
                 <li>
@@ -28,7 +32,7 @@ class ReviewEntry extends React.Component {
                                 </button>
                                 <span className="verified-pipe"> | </span>
                             </div>
-                            <div className="info-text">Posted {this.props.posted}. Owned for {this.props.purchased} when reviewed.</div>
+                            <div className="info-text">Posted {moment(posted, "YYYYMMDD").fromNow()}. Owned for {moment(posted, "YYYYMMDD").from(purchased, "YYYYMMDD")} when reviewed.</div>
                         </div>
                         <div className="review-body">
                             <p>{this.props.body}</p>
@@ -41,27 +45,27 @@ class ReviewEntry extends React.Component {
                             <div className="help-buttons-wrapper">
                                 <button className="helpful-btn">Helpful ({this.props.helpful})</button>
                                 <button className="unhelpful-btn">Unhelpful ({this.props.unhelpful})</button>
-                                <span> | </span>
+                                <span className="feedback-pipe"> | </span>
                             </div>
                             <div className="report-button-wrapper">
                                 <span className="report-btn">Report</span>
-                                <span> | </span>
+                                <span className="feedback-pipe"> | </span>
                             </div>
                             <div className="comment-btn-wrapper">
                                 <span className="post-comment-btn">Post comment</span>
                                 {
                                     this.props.comments.length > 0
                                         ?
-                                        <div>
-                                            <span> | </span>
-                                            <span>Show comment ({this.props.comments.length})</span>
+                                        <div className="show-comments-wrapper">
+                                            <span className="feedback-pipe"> | </span>
+                                            <span className="show-comment">Show comment ({this.props.comments.length})</span>
                                         </div>
                                         :
                                         this.props.comments.length > 1
                                             ?
-                                            <div>
-                                                <span> | </span>
-                                                <span>Show comments ({this.props.comments.length})</span>
+                                            <div className="show-comments-wrapper">
+                                                <span className="feedback-pipe"> | </span>
+                                                <span className="show-comment">Show comments ({this.props.comments.length})</span>
                                             </div>
                                             :
                                             <span></span>

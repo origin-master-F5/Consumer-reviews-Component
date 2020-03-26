@@ -147,12 +147,9 @@ ul {
     width: 100%;
     margin: 0;
     padding: 0;
-    letter-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
     display: inline-block;
     text-align: start;
+    margin-right: 10px;
 }
 
 .checkmark:after {
@@ -161,6 +158,8 @@ ul {
     font-style: normal;
     color: #0046be;
     font-size: 18px;
+    /* padding-bottom: 30px; */
+    /* margin-left: 10px; */
 }
 
 .single-star {
@@ -362,3 +361,51 @@ ul {
 
 
 /***** REVIEW-ENTRY COMPONENT *****/
+
+.feedback-row {
+    overflow: hidden;
+}
+
+.help-buttons-wrapper {
+    float: left;
+    overflow: hidden;
+}
+
+.helpful-btn {
+    float: left;
+}
+
+.unhelpful-btn {
+    float: left;
+}
+
+.feedback-pipe {
+    float: left;
+}
+
+.report-button-wrapper {
+    float: left;
+    overflow: hidden;
+}
+
+.report-btn {
+    float: left;
+}
+
+.comment-btn-wrapper {
+    float: left;
+    overflow: hidden;
+}
+
+.post-comment-btn {
+    float: left;
+}
+
+.show-comments-wrapper {
+    float: left;
+    overflow: hidden;
+}
+
+.show-comment {
+    float: left;
+}
