@@ -30,8 +30,9 @@
 
 .bargraph-parent-div {
     float: left;
+    padding-top: 30px;
     height: 233px;
-    width: 35%;
+    width: 37%;
 }
 
 .proconlist-parent-div {
@@ -43,7 +44,7 @@
 .snapshot-spacer {
     height: 233px;
     float: left;
-    width: 7%;
+    width: 5%;
 }
 
 
@@ -104,15 +105,25 @@
 
 /***** BARGRAPH COMPONENT *****/
 
+.rating-bars {
+    width: 100%;
+}
+
 .single-rating-bar {
     overflow: hidden;
+    margin-bottom: 15px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 15px;
 }
 
 .star-value {
     float: left;
+    margin-right: 10px;
 }
 
 .checkbox {
+    margin-right: 10px;
     float: left;
     cursor: pointer;
     height: 16px;
@@ -146,8 +157,6 @@
     content: "\f00c";
     font-family: FontAwesome;
     font-style: normal;
-    /* font-weight: normal; */
-    /* text-decoration: inherit; */
     color: #0046be;
     font-size: 18px;
 }
@@ -159,6 +168,7 @@
     background-image: url(https://www.bestbuy.com/~assets/bby/_com/user-generated-content/ratings-and-reviews/dist/client/images/581e9fc450762e2d9b6e6326a4c2e787.svg);
     background-position: 0 0;
     vertical-align: bottom;
+    margin-left: 10px;
     margin-bottom: 1px;
 }
 
@@ -167,11 +177,11 @@
     background-color: #e0e6ef;
     box-shadow: none;
     margin-top: 3px;
-    /* display: inline-block; */
     height: 13px;
-    width: 50%;
+    width: 70%;
     border-radius: 6.5px;
     overflow: hidden;
+    margin-right: 15px;
 }
 
 .progress-bar {
@@ -184,8 +194,6 @@
     text-align: center;
     background-color: #0046be;
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
-    /* -webkit-transition: width .6s ease;
-    transition: width .6s ease; */
 }
 
 .star-count-display {
