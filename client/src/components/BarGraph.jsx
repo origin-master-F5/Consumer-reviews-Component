@@ -48,7 +48,6 @@ class BarGraph extends React.Component {
                     <div className="checkbox">
                         <i className="custom-checkbox-input"></i>
                         <input type="checkbox" className="checkbox-filter" />
-                        
                     </div>
                     <div className="star-value">
                         <span>5</span>

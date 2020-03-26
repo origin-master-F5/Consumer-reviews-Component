@@ -110,7 +110,6 @@
 
 .rate-bar {
     cursor: pointer;
-    /* padding-bottom: 30px; */
 }
 
 .checkbox {
@@ -134,10 +133,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    /* text-rendering: auto; */
-    /* color: -internal-light-dark-color(black, white); */
     letter-spacing: normal;
-    /* word-spacing: normal; */
     text-transform: none;
     text-indent: 0px;
     text-shadow: none;
@@ -145,45 +141,24 @@
     text-align: start;
 }
 
-
-/* .custom-checkbox-input:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-} */
-
 .custom-checkbox-input:after {
     content: "\f00c";
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-    /*--adjust as necessary--*/
     color: #0046be;
     font-size: 18px;
-    /* float: left; */
-    /* padding-right: 0.5em; */
-    /* position: absolute; */
-    /* top: 10px; */
-    /* left: 0; */
-    /* content: "";
-    display: block;
-    position: absolute;
-    transform: scale(.1);
-    opacity: 0;
-    transition: transform .1s ease-out;
-    color: #0046be;
-    line-height: 13px;
-    font-size: 13px;
-    left: 2px;
-    top: -2px;
-    line-height: 16px;
-    font-size: 15px;
-    left: 3px; */
+}
+
+.single-star {
+    display: inline-block;
+    width: 18px;
+    height: 16px;
+    background-image: url(https://www.bestbuy.com/~assets/bby/_com/user-generated-content/ratings-and-reviews/dist/client/images/581e9fc450762e2d9b6e6326a4c2e787.svg);
+    background-position: 0 0;
+    vertical-align: bottom;
+    margin-bottom: 1px;
 }
 
 
