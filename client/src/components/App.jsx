@@ -46,7 +46,7 @@ class App extends React.Component {
             return (
                 <div className="all-components-wrapper">
                     <div className="reviews-component-parent-div">
-                        <div onClick={this.handleViewChange} className="review-accordian">
+                        <div onClick={this.handleViewChange} className="review-accordion">
                             <span className="reviews-title-text">Reviews</span>
                             <span className={this.state.view}></span>
                         </div>
