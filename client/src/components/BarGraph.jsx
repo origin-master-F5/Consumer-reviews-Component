@@ -14,8 +14,13 @@ class BarGraph extends React.Component {
             twoStar: 0,
             oneStar: 0,
             totalCount: 0,
-            checked: false
+            checkOne: '',
+            checkTwo: '',
+            checkThree: '',
+            checkFour: '',
+            checkFive: ''
         }
+        this.handleCheck = this.handleCheck.bind(this)
     }
     componentDidMount() {
         axios.get('/reviews')
@@ -41,44 +46,95 @@ class BarGraph extends React.Component {
         }
         return rateCount
     }
+    handleCheck(marker) {
+        if (this.state[marker] === 'checkmark') {
+            this.setState({
+                [marker]: ''
+            })
+        } else {
+            this.setState({
+                [marker]: 'checkmark'
+            })
+        }
+    }
     render() {
         return (
             <div className="bargraph-parent-div">
                 <div className="rating-bars">
-                    <div className="checkbox">
-                        <i className="custom-checkbox-input"></i>
-                        <input type="checkbox" className="checkbox-filter" />
+                    <div onClick={() => this.handleCheck('checkFive')} className="single-rating-bar">
+                        <div className="checkbox">
+                            <i className={this.state.checkFive}></i>
+                            <input type="checkbox" className="checkbox-filter" />
+                        </div>
+                        <div className="star-value">
+                            <span>5</span>
+                            <span className="single-star"></span>
+                        </div>
+                        <div className="progress-bar-wrapper">
+                            <span className="progress-bar" style={{ width: `${this.state.fiveStar}%` }}></span>
+                        </div>
+                        <span className="star-count-display">{this.state.fiveStar}</span>
                     </div>
-                    <div className="star-value">
-                        <span>5</span>
-                        <span className="single-star"></span>
+                    <div onClick={() => this.handleCheck('checkFour')} className="single-rating-bar">
+                        <div className="checkbox">
+                            <i className={this.state.checkFour}></i>
+                            <input type="checkbox" className="checkbox-filter" />
+                        </div>
+                        <div className="star-value">
+                            <span>4</span>
+                            <span className="single-star"></span>
+                        </div>
+                        <div className="progress-bar-wrapper">
+                            <span className="progress-bar" style={{ width: `${this.state.fourStar}%` }}></span>
+                        </div>
+                        <span>{this.state.fourStar}</span>
                     </div>
-                    <div className="progress-bar-wrapper">
-                        <span className="progress-bar"></span>
-                    </div>
-                    <span>{this.state.fiveStar}</span>
-                    
 
-                    {/* <label className="five-graph rate-bar">
-                        <input className="five-filter-button" type="checkbox"/>
-                        [5-star-width={Math.round((this.state.fiveStar / this.state.totalCount) * 100)}%=====================================]-{this.state.fiveStar}
-                    </label>
-                    <label className="four-graph rate-bar">
-                        <input className="four-filter-button" type="checkbox"/>
-                        [4-star-width={Math.round((this.state.fourStar / this.state.totalCount) * 100)}%=====================================]-{this.state.fourStar}
-                    </label>
-                    <label className="three-graph rate-bar">
-                        <input className="three-filter-button" type="checkbox"/>
-                        [3-star-width={Math.round((this.state.threeStar / this.state.totalCount) * 100)}%=====================================]-{this.state.threeStar}
-                    </label>
-                    <label className="two-graph rate-bar">
-                        <input className="two-filter-button" type="checkbox"/>
-                        [2-star-width={Math.round((this.state.twoStar / this.state.totalCount) * 100)}%=====================================]-{this.state.twoStar}
-                    </label>
-                    <label className="one-graph rate-bar">
-                        <input className="one-filter-button" type="checkbox"/>
-                        [1-star-width={Math.round((this.state.oneStar / this.state.totalCount) * 100)}%=====================================]-{this.state.oneStar}
-                    </label> */}
+                    <div onClick={() => this.handleCheck('checkThree')} className="single-rating-bar">
+                        <div className="checkbox">
+                            <i className={this.state.checkThree}></i>
+                            <input type="checkbox" className="checkbox-filter" />
+                        </div>
+                        <div className="star-value">
+                            <span>3</span>
+                            <span className="single-star"></span>
+                        </div>
+                        <div className="progress-bar-wrapper">
+                            <span className="progress-bar" style={{ width: `${this.state.threeStar}%` }}></span>
+                        </div>
+                        <span>{this.state.threeStar}</span>
+                    </div>
+
+                    <div onClick={() => this.handleCheck('checkTwo')} className="single-rating-bar">
+                        <div className="checkbox">
+                            <i className={this.state.checkTwo}></i>
+                            <input type="checkbox" className="checkbox-filter" />
+                        </div>
+                        <div className="star-value">
+                            <span>2</span>
+                            <span className="single-star"></span>
+                        </div>
+                        <div className="progress-bar-wrapper">
+                            <span className="progress-bar" style={{ width: `${this.state.twoStar}%` }}></span>
+                        </div>
+                        <span>{this.state.twoStar}</span>
+                    </div>
+
+                    <div onClick={() => this.handleCheck('checkOne')} className="single-rating-bar">
+                        <div className="checkbox">
+                            <i className={this.state.checkOne}></i>
+                            <input type="checkbox" className="checkbox-filter" />
+                        </div>
+                        <div className="star-value">
+                            <span>1</span>
+                            <span className="single-star"></span>
+                        </div>
+                        <div className="progress-bar-wrapper">
+                            <span className="progress-bar" style={{ width: `${this.state.oneStar}%` }}></span>
+                        </div>
+                        <span>{this.state.oneStar}</span>
+                    </div>
+
                 </div>
             </div>
         );
