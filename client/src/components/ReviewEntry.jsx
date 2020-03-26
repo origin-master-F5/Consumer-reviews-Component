@@ -24,16 +24,19 @@ class ReviewEntry extends React.Component {
                             <div className="review-entry-stars"></div>
                             <h4>{this.props.title}</h4>
                         </div>
+                        
                         <div className="review-entry-info">
-                            <div className="verified-icon">
-                                <button>
-                                    <img alt="checkmark" src="https://www.bestbuy.com/~assets/bby/_com/ugc-raas/ugc-common-assets/ugc-badge-verified-check.svg" />
-                                    <strong>Verified Purchase</strong>
+                            <div className="verified-icon-wrapper">
+                                <button className="verified-btn">
+                                    <img className="v-checkmark" alt="checkmark" src="https://www.bestbuy.com/~assets/bby/_com/ugc-raas/ugc-common-assets/ugc-badge-verified-check.svg" />
+                                    <strong className="v-btn-text">Verified Purchase</strong>
                                 </button>
-                                <span className="verified-pipe"> | </span>
                             </div>
-                            <div className="info-text">Posted {moment(posted, "YYYYMMDD").fromNow()}. Owned for {moment(posted, "YYYYMMDD").from(purchased, "YYYYMMDD")} when reviewed.</div>
+
+                            {/* <span className="verified-pipe"> | </span> */}
+                            <div className="info-text">| Posted {moment(posted, "YYYYMMDD").fromNow()}. Owned for {moment(posted, "YYYYMMDD").from(purchased, "YYYYMMDD")} when reviewed.</div>
                         </div>
+
                         <div className="review-body">
                             <p>{this.props.body}</p>
                         </div>

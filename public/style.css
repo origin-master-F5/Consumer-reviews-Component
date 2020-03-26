@@ -10,6 +10,10 @@ ul {
     list-style-type: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 .bottom-border-line {
     border-bottom: solid 1px #b1b6bd;
 }
@@ -248,7 +252,6 @@ ul {
     /* padding-bottom: 0; */
     /* height: 300px; */
     width: 50%;
-    /* border: solid 1px black; */
 }
 
 .pros-cons-title {
@@ -256,7 +259,6 @@ ul {
 }
 
 .filter-word-btn {
-    /* text-align: left; hover -> #0046be*/
     border-radius: 4px;
     color: #0046be;
     cursor: pointer;
@@ -395,6 +397,50 @@ ul {
 
 
 /***** REVIEW-ENTRY COMPONENT *****/
+
+.review-entry-info {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    /* height: 20px; */
+}
+
+.verfied-icon-wrapper {
+    float: left;
+    width: 25%;
+    padding: 0;
+}
+
+.verified-btn {
+    float: left;
+    border: none;
+    background: none;
+    color: #1d252c;
+    font-size: 13px;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+.v-checkmark {
+    float: left;
+}
+
+.v-btn-text {
+    float: left;
+    margin-left: 5px;
+}
+
+
+/* .verified-pipe {
+    width: 5%;
+    float: left;
+} */
+
+.info-text {
+    float: left;
+    font-size: 13px;
+    color: #55555a;
+}
 
 .feedback-row {
     overflow: hidden;
