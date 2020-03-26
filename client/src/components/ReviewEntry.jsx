@@ -10,12 +10,12 @@ class ReviewEntry extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="review-entry-wrapper">
                 <li>
-                    <div>
+                    <div className="review-entry-user">
                         <p>{this.props.user}</p>
                     </div>
-                    <div>
+                    <div className="review-content-wrapper">
                         <div className="review-heading">
                             <div className="review-entry-stars"></div>
                             <h4>{this.props.title}</h4>

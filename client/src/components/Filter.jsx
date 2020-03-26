@@ -11,7 +11,7 @@ class Filter extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="filter-parent-div">
                 <Verified />
                 <Search />
             </div>

@@ -31,7 +31,7 @@ class Review extends React.Component {
         return (
             <div className="review-parent-div">
                 <div className="review-list-info">
-                    <span>Showing <strong>1-8</strong> of {this.state.reviews.length} reviews</span>
+                <span>Showing <strong>1-8</strong> of {this.state.reviews.length} reviews</span>
                 </div>
                 <ul>
                     {this.state.firstEight.map((review, index) => (

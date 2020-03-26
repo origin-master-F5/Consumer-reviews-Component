@@ -30,7 +30,7 @@ class Verified extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="verified-parent-div">
                 <div className="switch">switch</div>
                 <div>
                     <p>Show only <b>Verified Purchases</b> ({this.state.verifiedCount})</p>
