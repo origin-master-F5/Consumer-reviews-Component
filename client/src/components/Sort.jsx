@@ -18,16 +18,18 @@ class Sort extends React.Component {
         console.log(this.state.sort)
         return (
             <div className="sort-parent-div">
-                <label><b>Sort by</b></label>
-                <select onChange={this.handleClick}>
-                    <option value="/reviews" >Most Relevant</option>
-                    <option value="/reviews/help" >Most Helpful</option>
-                    <option value="/reviews/recent" >Most Recent</option>
-                    <option value="/reviews/oldest" >Oldest</option>
-                    <option value="/reviews/highestRating" >Highest Rating</option>
-                    <option value="/reviews/lowestRating" >Lowest Rating</option>
-                </select>
-                <button className="info-modal">i</button>
+                <label className="sort-title"><b>Sort by</b></label>
+                <div className="dropdown-wrapper">
+                    <select className="sort-dropdown" onChange={this.handleClick}>
+                        <option value="/reviews" >Most Relevant</option>
+                        <option value="/reviews/help" >Most Helpful</option>
+                        <option value="/reviews/recent" >Most Recent</option>
+                        <option value="/reviews/oldest" >Oldest</option>
+                        <option value="/reviews/highestRating" >Highest Rating</option>
+                        <option value="/reviews/lowestRating" >Lowest Rating</option>
+                    </select>
+                </div>
+                <button className="info-modal-btn">i</button>
             </div>
         );
     }

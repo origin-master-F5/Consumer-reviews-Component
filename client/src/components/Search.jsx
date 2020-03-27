@@ -7,22 +7,19 @@ class Search extends React.Component {
         super(props)
 
         this.state = {
-            userInput: ''
+            userInput: '',
+            cancelDisplay: false
         }
     }
     render() {
         return (
             <div className="search-and-sort-wrapper">
                 <div className="search-bar-parent-div">
-                    <form>
+                    <form className="search-bar-form">
                         <input type="text" className="search-input" placeholder="Search customer reviews" />
-                        <button className="cancel-text-btn">
-                            <svg viewBox="0 0 100 100"></svg>
-                        </button>
-                        <span className="pipe-division"></span>
-                        <button className="search-submit" type="submit">
-                            <svg viewBox="0 0 100 100"></svg>
-                        </button>
+                        {/* <button className="cancel-txt-btn"></button> */}
+                        <span className="pipe-division"> | </span>
+                        <button className="search-submit" type="submit"></button>
                     </form>
                 </div>
                 <Sort />
