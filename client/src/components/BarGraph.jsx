@@ -71,7 +71,7 @@ class BarGraph extends React.Component {
                             <span className="single-star"></span>
                         </div>
                         <div className="progress-bar-wrapper">
-                            <span className="progress-bar" style={{ width: `${this.state.fiveStar}%` }}></span>
+                            <span className="progress-bar" style={{ width: `${Math.round((this.state.fiveStar / (this.state.totalCount)) * 100)}%` }}></span>
                         </div>
                         <span className="star-count-display">{this.state.fiveStar}</span>
                     </div>
@@ -85,7 +85,7 @@ class BarGraph extends React.Component {
                             <span className="single-star"></span>
                         </div>
                         <div className="progress-bar-wrapper">
-                            <span className="progress-bar" style={{ width: `${this.state.fourStar}%` }}></span>
+                            <span className="progress-bar" style={{ width: `${Math.round((this.state.fourStar / (this.state.totalCount)) * 100)}%` }}></span>
                         </div>
                         <span>{this.state.fourStar}</span>
                     </div>
@@ -100,7 +100,7 @@ class BarGraph extends React.Component {
                             <span className="single-star"></span>
                         </div>
                         <div className="progress-bar-wrapper">
-                            <span className="progress-bar" style={{ width: `${this.state.threeStar}%` }}></span>
+                            <span className="progress-bar" style={{ width: `${Math.round((this.state.threeStar / (this.state.totalCount)) * 100)}%` }}></span>
                         </div>
                         <span>{this.state.threeStar}</span>
                     </div>
@@ -115,7 +115,7 @@ class BarGraph extends React.Component {
                             <span className="single-star"></span>
                         </div>
                         <div className="progress-bar-wrapper">
-                            <span className="progress-bar" style={{ width: `${this.state.twoStar}%` }}></span>
+                            <span className="progress-bar" style={{ width: `${Math.round((this.state.twoStar / (this.state.totalCount)) * 100)}%` }}></span>
                         </div>
                         <span>{this.state.twoStar}</span>
                     </div>
@@ -130,7 +130,7 @@ class BarGraph extends React.Component {
                             <span className="single-star"></span>
                         </div>
                         <div className="progress-bar-wrapper">
-                            <span className="progress-bar" style={{ width: `${this.state.oneStar}%` }}></span>
+                            <span className="progress-bar" style={{ width: `${Math.round((this.state.oneStar / (this.state.totalCount)) * 100)}%` }}></span>
                         </div>
                         <span>{this.state.oneStar}</span>
                     </div>

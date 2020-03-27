@@ -10,7 +10,6 @@ class ReviewEntry extends React.Component {
         this.state = {}
     }
     render() {
-        console.log('purchased-->', this.props.posted)
         let purchased;
         if(this.props.purchased) {
             purchased = this.props.purchased.substring(0, 10);
