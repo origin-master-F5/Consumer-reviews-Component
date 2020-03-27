@@ -16,7 +16,7 @@ class Review extends React.Component {
         }
     }
     componentDidMount() {
-        axios.get('/reviews/help')
+        axios.get('/reviews/recent')
             .then((data) => {
                 this.setState({
                     reviews: data.data,
