@@ -451,19 +451,29 @@ button {
     margin-left: 5px;
 }
 
-
-/* .verified-pipe {
-    width: 5%;
-    float: left;
-} */
-
 .info-text {
     float: left;
     font-size: 13px;
     color: #55555a;
 }
 
+.dark-check-mark:after {
+    content: "\f058";
+    font-family: FontAwesome;
+    font-size: 15px;
+    color: #55555a;
+    /* float: right; */
+}
+
+.true-recommend-text {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-bottom: 30px;
+}
+
 .feedback-row {
+    margin-top: 20px;
     overflow: hidden;
 }
 
@@ -474,14 +484,44 @@ button {
 
 .helpful-btn {
     float: left;
+    border-radius: 4px;
+    color: #0046be;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #c5cbd5;
+    text-transform: capitalize;
+    transition: all .3s ease-out 0s;
+}
+
+.helpful-btn:hover {
+    background: #0046be;
+    color: #fff;
 }
 
 .unhelpful-btn {
     float: left;
+    color: #0046be;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px;
+    background: transparent;
+    border: none;
+}
+
+.unhelpful-btn:hover {
+    text-decoration: underline;
+    color: #022d69;
 }
 
 .feedback-pipe {
     float: left;
+    font-size: 18px;
+    font-weight: 400;
+    color: #55555a7a;
+    padding: 4px;
 }
 
 .report-button-wrapper {
@@ -491,6 +531,17 @@ button {
 
 .report-btn {
     float: left;
+    color: #0046be;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px;
+    background: transparent;
+    border: none;
+}
+
+.report-btn:hover {
+    text-decoration: underline;
+    color: #022d69;
 }
 
 .comment-btn-wrapper {
@@ -500,6 +551,17 @@ button {
 
 .post-comment-btn {
     float: left;
+    color: #0046be;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px;
+    background: transparent;
+    border: none;
+}
+
+.post-comment-btn:hover {
+    text-decoration: underline;
+    color: #022d69;
 }
 
 .show-comments-wrapper {
@@ -509,4 +571,15 @@ button {
 
 .show-comment {
     float: left;
+    color: #0046be;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px;
+    background: transparent;
+    border: none;
+}
+
+.show-comment:hover {
+    text-decoration: underline;
+    color: #022d69;
 }

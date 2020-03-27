@@ -24,7 +24,7 @@ class ReviewEntry extends React.Component {
                             <div className="review-entry-stars"></div>
                             <h4>{this.props.title}</h4>
                         </div>
-                        
+
                         <div className="review-entry-info">
                             <div className="verified-icon-wrapper">
                                 <button className="verified-btn">
@@ -42,36 +42,30 @@ class ReviewEntry extends React.Component {
                         </div>
                         {/* <Pic /> */}
                         <div>
-                            <strong>I would recommend this to a friend</strong>
+                            <span className="dark-check-mark"></span>
+                            <strong className="true-recommend-text">I would recommend this to a friend</strong>
                         </div>
                         <div className="feedback-row">
                             <div className="help-buttons-wrapper">
                                 <button className="helpful-btn">Helpful ({this.props.helpful})</button>
                                 <button className="unhelpful-btn">Unhelpful ({this.props.unhelpful})</button>
-                                <span className="feedback-pipe"> | </span>
                             </div>
+                            <span className="feedback-pipe"> | </span>
                             <div className="report-button-wrapper">
-                                <span className="report-btn">Report</span>
+                                <button className="report-btn">Report</button>
                                 <span className="feedback-pipe"> | </span>
                             </div>
                             <div className="comment-btn-wrapper">
-                                <span className="post-comment-btn">Post comment</span>
+                                <button className="post-comment-btn">Post comment</button>
                                 {
                                     this.props.comments.length > 0
                                         ?
                                         <div className="show-comments-wrapper">
                                             <span className="feedback-pipe"> | </span>
-                                            <span className="show-comment">Show comment ({this.props.comments.length})</span>
+                                            <button className="show-comment">Show comment ({this.props.comments.length})</button>
                                         </div>
                                         :
-                                        this.props.comments.length > 1
-                                            ?
-                                            <div className="show-comments-wrapper">
-                                                <span className="feedback-pipe"> | </span>
-                                                <span className="show-comment">Show comments ({this.props.comments.length})</span>
-                                            </div>
-                                            :
-                                            <span></span>
+                                        <span></span>
                                 }
                             </div>
                         </div>
