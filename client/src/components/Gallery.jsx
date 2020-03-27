@@ -34,7 +34,7 @@ class Gallery extends React.Component {
     }
     render() {
         return (
-            <div className="gallery-wrapper">
+            <div className="gallery-wrapper  bottom-border-line">
                 <h3 className="gallery-title">Customer images</h3>
                 <div className="image-carousel">
                     <div className="carousel-wrapper">
