@@ -41,10 +41,20 @@ class ReviewEntry extends React.Component {
                             <p>{this.props.body}</p>
                         </div>
                         {/* <Pic /> */}
-                        <div>
-                            <span className="dark-check-mark"></span>
-                            <strong className="true-recommend-text">I would recommend this to a friend</strong>
-                        </div>
+                        {
+                            this.props.recommended
+                                ?
+                                <div>
+                                    <span className="dark-check-mark"></span>
+                                    <strong className="true-recommend-text">I would recommend this to a friend</strong>
+                                </div>
+                                :
+                                <div>
+                                    <span className="dark-cancel-mark"></span>
+                                    <strong className="false-recommend-text">No, I would not recommend this to a friend</strong>
+                                </div>
+
+                        }
                         <div className="feedback-row">
                             <div className="help-buttons-wrapper">
                                 <button className="helpful-btn">Helpful ({this.props.helpful})</button>

@@ -472,6 +472,21 @@ button {
     margin-bottom: 30px;
 }
 
+.dark-cancel-mark:after {
+    content: "\f057";
+    font-family: FontAwesome;
+    font-size: 15px;
+    color: #55555a;
+    /* float: right; */
+}
+
+.false-recommend-text {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-bottom: 30px;
+}
+
 .feedback-row {
     margin-top: 20px;
     overflow: hidden;
