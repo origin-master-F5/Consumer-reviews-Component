@@ -31,7 +31,10 @@ class Verified extends React.Component {
     render() {
         return (
             <div className="verified-parent-div">
-                <div className="switch">switch</div>
+                <label className="switch">
+                    <input type="checkbox" className="toggle-body"/>
+                    <span className="slider"></span>
+                </label>
                 <div>
                     <p>Show only <b>Verified Purchases</b> ({this.state.verifiedCount})</p>
                     <a className="learn-more" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Learn more</a>
