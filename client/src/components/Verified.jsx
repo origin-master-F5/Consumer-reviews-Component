@@ -35,8 +35,8 @@ class Verified extends React.Component {
                     <input type="checkbox" className="toggle-body"/>
                     <span className="slider"></span>
                 </label>
-                <div>
-                    <p>Show only <b>Verified Purchases</b> ({this.state.verifiedCount})</p>
+                <div className="verified-switch-text">
+                    <p className="switch-text-p">Show only <b>Verified Purchases</b> ({this.state.verifiedCount})</p>
                     <a className="learn-more" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Learn more</a>
                 </div>
             </div>
