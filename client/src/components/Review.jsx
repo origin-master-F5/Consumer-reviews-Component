@@ -16,7 +16,7 @@ class Review extends React.Component {
         }
     }
     componentDidMount() {
-        axios.get('/reviews/help')
+        axios.get('/reviews/recent')
             .then((data) => {
                 this.setState({
                     reviews: data.data,
@@ -31,23 +31,23 @@ class Review extends React.Component {
         return (
             <div className="review-parent-div">
                 <div className="review-list-info">
-                <span>Showing <strong>1-8</strong> of {this.state.reviews.length} reviews</span>
+                    <span>Showing <strong>1-8</strong> of {this.state.reviews.length} reviews</span>
                 </div>
                 <ul>
                     {this.state.firstEight.map((review, index) => (
-                        <ReviewEntry 
-                            key={index} 
-                            id={review._id} 
-                            user={review.user} 
-                            rating={review.rating} 
-                            title={review.title} 
-                            verified={review.verified} 
-                            posted={review.createdAt} 
-                            purchased={review.purchasedDate} 
-                            body={review.body} pics={review.pics} 
-                            recommended={review.recommended} 
-                            helpful={review.helpfulCount} 
-                            unhelpful={review.unhelpfulCount} 
+                        <ReviewEntry
+                            key={index}
+                            id={review._id}
+                            user={review.user}
+                            rating={review.rating}
+                            title={review.title}
+                            verified={review.verified}
+                            posted={review.createdAt}
+                            purchased={review.purchasedDate}
+                            body={review.body} pics={review.pics}
+                            recommended={review.recommended}
+                            helpful={review.helpfulCount}
+                            unhelpful={review.unhelpfulCount}
                             comments={review.comments}
                         />
                     ))}

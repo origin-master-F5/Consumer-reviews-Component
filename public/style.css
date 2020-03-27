@@ -10,8 +10,13 @@ ul {
     list-style-type: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 .bottom-border-line {
     border-bottom: solid 1px #b1b6bd;
+    padding-bottom: 40px;
 }
 
 
@@ -135,6 +140,7 @@ ul {
 
 .see-all-reviews:hover {
     text-decoration: underline;
+    color: #022d69;
 }
 
 
@@ -248,7 +254,6 @@ ul {
     /* padding-bottom: 0; */
     /* height: 300px; */
     width: 50%;
-    /* border: solid 1px black; */
 }
 
 .pros-cons-title {
@@ -256,7 +261,6 @@ ul {
 }
 
 .filter-word-btn {
-    /* text-align: left; hover -> #0046be*/
     border-radius: 4px;
     color: #0046be;
     cursor: pointer;
@@ -369,10 +373,15 @@ ul {
 
 .learn-more:hover {
     text-decoration: underline;
+    color: #022d69;
 }
 
 
 /***** REVIEW COMPONENT *****/
+
+.review-list-info {
+    font-size: 13px;
+}
 
 .review-parent-div {
     width: 100%;
@@ -383,7 +392,7 @@ ul {
     overflow: hidden;
 }
 
-.review-entry-user {
+.review-entry-user-wrapper {
     width: 25%;
     float: left;
 }
@@ -396,7 +405,90 @@ ul {
 
 /***** REVIEW-ENTRY COMPONENT *****/
 
+.review-entry-user {
+    color: #0457c8;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.review-entry-user:hover {
+    color: #022d69;
+}
+
+.review-heading {
+    font-size: 18px;
+}
+
+.review-entry-info {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    /* height: 20px; */
+}
+
+.verfied-icon-wrapper {
+    float: left;
+    width: 25%;
+    padding: 0;
+}
+
+.verified-btn {
+    float: left;
+    border: none;
+    background: none;
+    color: #1d252c;
+    font-size: 13px;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+.v-checkmark {
+    float: left;
+}
+
+.v-btn-text {
+    float: left;
+    margin-left: 5px;
+}
+
+.info-text {
+    float: left;
+    font-size: 13px;
+    color: #55555a;
+}
+
+.dark-check-mark:after {
+    content: "\f058";
+    font-family: FontAwesome;
+    font-size: 15px;
+    color: #55555a;
+    /* float: right; */
+}
+
+.true-recommend-text {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-bottom: 30px;
+}
+
+.dark-cancel-mark:after {
+    content: "\f057";
+    font-family: FontAwesome;
+    font-size: 15px;
+    color: #55555a;
+    /* float: right; */
+}
+
+.false-recommend-text {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-bottom: 30px;
+}
+
 .feedback-row {
+    margin-top: 20px;
     overflow: hidden;
 }
 
@@ -407,14 +499,44 @@ ul {
 
 .helpful-btn {
     float: left;
+    border-radius: 4px;
+    color: #0046be;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #c5cbd5;
+    text-transform: capitalize;
+    transition: all .3s ease-out 0s;
+}
+
+.helpful-btn:hover {
+    background: #0046be;
+    color: #fff;
 }
 
 .unhelpful-btn {
     float: left;
+    color: #0046be;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px;
+    background: transparent;
+    border: none;
+}
+
+.unhelpful-btn:hover {
+    text-decoration: underline;
+    color: #022d69;
 }
 
 .feedback-pipe {
     float: left;
+    font-size: 18px;
+    font-weight: 400;
+    color: #55555a7a;
+    padding: 4px;
 }
 
 .report-button-wrapper {
@@ -424,6 +546,17 @@ ul {
 
 .report-btn {
     float: left;
+    color: #0046be;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px;
+    background: transparent;
+    border: none;
+}
+
+.report-btn:hover {
+    text-decoration: underline;
+    color: #022d69;
 }
 
 .comment-btn-wrapper {
@@ -433,6 +566,17 @@ ul {
 
 .post-comment-btn {
     float: left;
+    color: #0046be;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px;
+    background: transparent;
+    border: none;
+}
+
+.post-comment-btn:hover {
+    text-decoration: underline;
+    color: #022d69;
 }
 
 .show-comments-wrapper {
@@ -442,4 +586,15 @@ ul {
 
 .show-comment {
     float: left;
+    color: #0046be;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px;
+    background: transparent;
+    border: none;
+}
+
+.show-comment:hover {
+    text-decoration: underline;
+    color: #022d69;
 }
