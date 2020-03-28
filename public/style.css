@@ -287,60 +287,88 @@
         }
         
         .image-carousel {
-            margin-top: 24px;
+            /* margin-top: 24px;
             margin-bottom: 24px;
             margin-left: 0;
-            margin-right: 0;
-            position: relative;
+            margin-right: 0; */
+            margin: 0;
+            padding: 0;
+            /* position: relative; */
         }
         
         .carousel-wrapper {
-            overflow: visible;
+            overflow: hidden;
+            /* padding: 0 32px; */
+            width: 100%;
+            /* max-width: 1740px; */
+            /*might delete*/
+            /* position: relative; */
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            position: absolute;
+            min-width: 720px;
+            /*might delete*/
+            /* top: 0;
+            bottom: 0; */
+            left: 25%;
+            text-align: center;
+            background: none;
         }
         
         .left-caret {
+            /* float: left; */
             cursor: pointer;
-            float: left;
-            height: 50px;
-            width: 30px;
+            height: 55px;
+            width: 35px;
+            margin-right: 15px;
+            /* left: -20px;
+            right: auto; */
         }
         
         .image-list {
-            float: left;
-            width: 60%;
+            margin: 0;
+            padding: 0;
+            margin-left: 0px;
+            /* float: left; */
+            /* width: 60%; */
         }
         
         .right-caret {
+            /* float: left; */
             cursor: pointer;
-            float: left;
-            height: 50px;
-            width: 30px;
+            height: 55px;
+            width: 35px;
         }
         /***** PIC COMPONENT *****/
         
         .img-list-item {
             overflow: visible;
-            margin-left: 5px;
-            margin-right: 5px;
+            margin-left: 0px;
+            margin-right: 0px;
+            padding: 0;
+            display: inline-block;
+            /* float: left; */
         }
         
         .image-thumbnail-btn {
             /* margin: 1px; */
-            max-height: 70px;
-            max-width: 70px;
+            padding: 0;
+            margin: 0;
+            /* max-height: 70px;
+            max-width: 70px; */
             /* box-sizing: content-box; */
-            border: 1px solid #55555a;
-            float: left;
+            border: none;
+            background: transparent;
+            /* float: left; */
         }
         
         .image-thumbnail {
-            cursor: pointer;
-            margin: 1px;
+            margin: 0;
             padding: 0;
+            margin-right: 15px;
             height: 70px;
             width: 70px;
-            font-family: "object-fit:cover";
-            object-fit: cover;
             border: 1px solid #55555a;
         }
         
