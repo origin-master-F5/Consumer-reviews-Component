@@ -23,7 +23,7 @@ class BarGraph extends React.Component {
         this.handleCheck = this.handleCheck.bind(this)
     }
     componentDidMount() {
-        axios.get('/reviews')
+        axios.get(`${this.props.sort}/${this.props.sku}`)
             .then((data) => {
                 this.setState({
                     reviews: data.data,

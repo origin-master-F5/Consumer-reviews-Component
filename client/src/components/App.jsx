@@ -19,13 +19,14 @@ class App extends React.Component {
             //accodion is selected
             view: 'up-chevron',
             reviews: [],
-            sort: '/reviews'
+            sort: '/reviews',
+            sku: 1
         }
         this.handleViewChange = this.handleViewChange.bind(this)
         this.changeSort = this.changeSort.bind(this)
     }
     componentDidMount() {
-        axios.get(this.state.sort)
+        axios.get(`${this.state.sort}/${this.state.sku}`)
             .then((data) => {
                 this.setState({
                     reviews: data.data
@@ -47,7 +48,7 @@ class App extends React.Component {
     changeSort(e) {
         this.setState({
             sort: e.target.value
-        }, () => axios.get(this.state.sort)
+        }, () => axios.get(`${this.state.sort}/${this.state.sku}`)
             .then((data) => {
                 this.setState({
                     reviews: data.data
@@ -69,9 +70,9 @@ class App extends React.Component {
                             <span className="reviews-title-text">Reviews</span>
                             <span className={this.state.view}></span>
                         </div> */}
-                        <Snapshot />
-                        <Gallery />
-                        <Filter changeSort={() => this.changeSort} />
+                        <Snapshot sort={this.state.sort} sku={this.state.sku}/>
+                        <Gallery sort={this.state.sort} sku={this.state.sku}/>
+                        <Filter changeSort={() => this.changeSort} reviews={this.state.reviews}/>
                         <Review reviews={this.state.reviews} sample={this.state} sort={this.state.sort} />
                     </div>
                 </div>

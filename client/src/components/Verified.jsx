@@ -8,17 +8,9 @@ class Verified extends React.Component {
 
         this.state = {
             switched: false,
-            verifiedCount: 0
         }
     }
-    componentDidMount() {
-        axios.get('/reviews')
-            .then((data) => {
-                this.setState({
-                    verifiedCount: this.findVerifiedCount(data.data)
-                })
-            })
-    }
+
     findVerifiedCount(arr) {
         let count = 0
         for (let i = 0; i < arr.length; i++) {
@@ -36,7 +28,7 @@ class Verified extends React.Component {
                     <span className="slider"></span>
                 </label>
                 <div className="verified-switch-text">
-                    <p className="switch-text-p">Show only <b>Verified Purchases</b> ({this.state.verifiedCount})</p>
+                    <p className="switch-text-p">Show only <b>Verified Purchases</b> ({this.findVerifiedCount(this.props.reviews)})</p>
                     <a className="learn-more" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Learn more</a>
                 </div>
             </div>

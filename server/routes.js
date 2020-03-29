@@ -3,12 +3,12 @@ const controllers = require('./controllers.js');
 
 
 //all get requests
-router.get('/', controllers.all)
-router.get('/help', controllers.mostHelpful)
-router.get('/recent', controllers.recent)
-router.get('/oldest', controllers.old)
-router.get('/highestRating', controllers.highRate)
-router.get('/lowestRating', controllers.lowRate)
+router.get('/:sku', controllers.all)
+router.get('/help/:sku', controllers.mostHelpful)
+router.get('/recent/:sku', controllers.recent)
+router.get('/oldest/:sku', controllers.old)
+router.get('/highestRating/:sku', controllers.highRate)
+router.get('/lowestRating/:sku', controllers.lowRate)
 
 //all changes to the help/unhelp buttons
 router.patch('/addHelp/:id', controllers.addHelpCount)
