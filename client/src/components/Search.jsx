@@ -1,27 +1,36 @@
 import React from 'react';
 import Sort from './Sort.jsx';
 
-
+// cancelDisplay: false,
+// pipe: 'pipe-division-no-cancel'
 class Search extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            userInput: ''
+            userInput: '',
+            cancelDisplay: true
         }
     }
     render() {
         return (
             <div className="search-and-sort-wrapper">
                 <div className="search-bar-parent-div">
-                    <form>
+                    <form className="search-bar-form">
                         <input type="text" className="search-input" placeholder="Search customer reviews" />
-                        <button className="cancel-text-btn">
-                            <svg viewBox="0 0 100 100"></svg>
-                        </button>
-                        <span className="pipe-division"></span>
+                        {
+                            this.state.cancelDisplay
+                                ?
+                                <button className="cancel-txt-btn">
+                                    <img alt="cancel button" className="cancel-img" src="/images/cancel-btn.png" />
+                                </button>
+                                :
+                                <button className="cancel-filler">-</button>
+
+                        }
+                        <span className="pipe-division"> | </span>
                         <button className="search-submit" type="submit">
-                            <svg viewBox="0 0 100 100"></svg>
+                            <img alt="search button" className="search-img" src="/images/search-btn.png" />
                         </button>
                     </form>
                 </div>

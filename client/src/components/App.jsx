@@ -3,6 +3,7 @@ import Snapshot from './Snapshot.jsx';
 import Gallery from './Gallery.jsx';
 import Filter from './Filter.jsx';
 import Review from './Review.jsx';
+import Accordion from './Accordion.jsx';
 
 //Review Component will be mapped to the DOM later
 
@@ -11,7 +12,11 @@ class App extends React.Component {
         super(props)
 
         this.state = {
-            view: 'down-chevron'
+            //view will be set to 'up-chevron' for the sake
+            //of our demo, but typically it will initially be
+            //set to 'down-chevron' and change depending on if the 
+            //accodion is selected
+            view: 'up-chevron'
         }
         this.handleViewChange = this.handleViewChange.bind(this)
     }
@@ -33,27 +38,20 @@ class App extends React.Component {
         console.log('acc state -->', this.state.view)
         if (this.state.view === 'down-chevron') {
             return (
-                <div className="all-components-wrapper">
-                    <div className="reviews-component-parent-div">
-                        <div onClick={this.handleViewChange} className="review-accordion bottom-border-line">
-                            <span className="reviews-title-text">Reviews</span>
-                            <span className={this.state.view}></span>
-                        </div>
-                    </div>
-                </div>
+                <Accordion view={this.state.view} changeView={() => this.handleViewChange}/>
             )
         } else {
             return (
                 <div className="all-components-wrapper">
                     <div className="reviews-component-parent-div">
-                        <div onClick={this.handleViewChange} className="review-accordion">
+                        {/* <div onClick={this.handleViewChange} className="review-accordion">
                             <span className="reviews-title-text">Reviews</span>
                             <span className={this.state.view}></span>
-                        </div>
+                        </div> */}
                         <Snapshot />
                         <Gallery />
                         <Filter />
-                        <Review />
+                        <Review sort={'/reviews/help'}/>
                     </div>
                 </div>
             );

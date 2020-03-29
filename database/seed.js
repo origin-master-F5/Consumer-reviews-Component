@@ -36532,7 +36532,28 @@ let samples = [{
     }
 ]
 
+// const countRates = (arr) => {
+//   let obj = {
 
+//   }
+//   for (let i = 0; i < arr.length; i++) {
+//     let skuNum = arr[i].sku;
+//     let rateNum = arr[i].rating;
+//     if (!obj.hasOwnProperty(skuNum)) {
+//       obj[skuNum] = {};
+//       obj[skuNum][rateNum] = 1
+//     } else {
+//       obj[skuNum]
+//       if(!obj[skuNum].hasOwnProperty(rateNum)) {
+//          obj[skuNum][rateNum] = 1
+//       } else {
+//         obj[skuNum][rateNum]++
+//       }
+//     }
+//   }
+
+//   return obj
+// }
 
 const insertSamples = () => {
     Review.deleteMany({})
