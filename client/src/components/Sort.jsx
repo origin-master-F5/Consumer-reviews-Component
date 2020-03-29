@@ -20,7 +20,7 @@ class Sort extends React.Component {
             <div className="sort-parent-div">
                 <label className="sort-title"><b>Sort by</b></label>
                 <div className="dropdown-wrapper">
-                    <select className="sort-dropdown" onChange={this.handleChange}>
+                    <select className="sort-dropdown" onChange={this.props.changeSort()}>
                         <option value="/reviews" >Most Relevant</option>
                         <option value="/reviews/help" >Most Helpful</option>
                         <option value="/reviews/recent" >Most Recent</option>

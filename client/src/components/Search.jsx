@@ -13,6 +13,8 @@ class Search extends React.Component {
         }
     }
     render() {
+        console.log('props in Search', this.props)
+
         return (
             <div className="search-and-sort-wrapper">
                 <div className="search-bar-parent-div">
@@ -34,7 +36,7 @@ class Search extends React.Component {
                         </button>
                     </form>
                 </div>
-                <Sort />
+                <Sort changeSort={this.props.changeSort}/>
             </div>
 
         );
