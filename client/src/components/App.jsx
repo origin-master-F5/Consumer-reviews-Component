@@ -38,7 +38,7 @@ class App extends React.Component {
         console.log('acc state -->', this.state.view)
         if (this.state.view === 'down-chevron') {
             return (
-                <Accordion />
+                <Accordion view={this.state.view} changeView={() => this.handleViewChange}/>
             )
         } else {
             return (
