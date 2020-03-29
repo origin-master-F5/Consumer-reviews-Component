@@ -11,7 +11,7 @@ class ReviewEntry extends React.Component {
     }
     render() {
         let purchased;
-        if(this.props.purchased) {
+        if (this.props.purchased) {
             purchased = this.props.purchased.substring(0, 10);
         }
         purchased = '2020-02-03'
@@ -44,7 +44,20 @@ class ReviewEntry extends React.Component {
                         <div className="review-body">
                             <p>{this.props.body}</p>
                         </div>
-                        {/* <Pic /> */}
+                        <ul>
+                            {
+
+                                this.props.pics.length > 0
+                                    ?
+                                    this.props.pics.map((pic,index) => (
+                                        <Pic key={index} id={this.props.id} url={pic.url} />
+                                    ))
+                                    :
+                                    <span></span>
+
+                            }
+
+                        </ul>
                         {
                             this.props.recommended
                                 ?

@@ -9,22 +9,39 @@ class Review extends React.Component {
         super(props)
 
         this.state = {
-
+            firstEight: [],
+            firstSixteen: [],
+            view: 'eight'
         }
     }
     componentDidMount() {
-
+            this.setState({
+                firstEight: this.props.reviews.slice(0, 8),
+                firstSixteen: this.props.reviews.slice(0, 16)
+            })
     }
-
+    getVerified(arr) {
+        // if (clicked) {
+            let verifiedsOnly = []
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].verified) {
+                    verifiedsOnly.push(arr[i])
+                }
+            }
+            return verifiedsOnly
+        // }
+    }
     render() {
-        console.log(this.props)
+        // this.props.sample.firstEight
+        let eight = this.props.reviews.slice(0, 8)
+        let sixteen = this.props.reviews.slice(0, 16)
             return (
                 <div className="review-parent-div">
                     <div className="review-list-info">
                         <span>Showing <strong>1-8</strong> of {this.props.reviews.length} reviews</span>
                     </div>
                     <ul>
-                        {this.props.sample.firstEight.map((review, index) => (
+                        {this.getVerified(eight).map((review, index) => (
                             <ReviewEntry
                                 key={index}
                                 id={review._id}
@@ -34,7 +51,8 @@ class Review extends React.Component {
                                 verified={review.verified}
                                 posted={review.createdAt}
                                 purchased={review.purchasedDate}
-                                body={review.body} pics={review.pics}
+                                body={review.body} 
+                                pics={review.pics}
                                 recommended={review.recommended}
                                 helpful={review.helpfulCount}
                                 unhelpful={review.unhelpfulCount}
