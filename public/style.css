@@ -287,43 +287,46 @@
         }
         
         .image-carousel {
-            /* margin-top: 24px;
-            margin-bottom: 24px;
-            margin-left: 0;
-            margin-right: 0; */
             margin: 0;
             padding: 0;
-            /* position: relative; */
+            padding: 0;
+            list-style: none;
+            white-space: nowrap;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 0;
         }
         
         .carousel-wrapper {
             overflow: hidden;
-            /* padding: 0 32px; */
             width: 100%;
-            /* max-width: 1740px; */
-            /*might delete*/
-            /* position: relative; */
             display: flex;
             -webkit-box-align: center;
             align-items: center;
             position: absolute;
             min-width: 720px;
-            /*might delete*/
-            /* top: 0;
-            bottom: 0; */
-            left: 25%;
+            visibility: visible;
+            max-width: 760px;
+            left: 15%;
             text-align: center;
             background: none;
         }
         
         .left-caret {
-            /* float: left; */
             cursor: pointer;
             height: 55px;
             width: 35px;
             margin-right: 15px;
-            /* left: -20px;
-            right: auto; */
+            text-shadow: none;
+            background: none;
+        }
+        
+        .left-caret-grey {
+            height: 45px;
+            width: 40px;
+            margin-right: 15px;
+            text-shadow: none;
+            background: none;
         }
         
         .image-list {
@@ -332,6 +335,18 @@
             margin-left: 0px;
             /* float: left; */
             /* width: 60%; */
+            padding: 0;
+            list-style: none;
+            white-space: nowrap;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 0;
+        }
+        
+        .image-list li:first-child {
+            -webkit-transition: margin-left .5s;
+            transition: margin-left .5s;
+            /* border: 5px solid green; */
         }
         
         .right-caret {
@@ -339,6 +354,13 @@
             cursor: pointer;
             height: 55px;
             width: 35px;
+            margin-left: 15px;
+        }
+        
+        .right-caret-grey {
+            height: 45px;
+            width: 40px;
+            margin-left: 15px;
         }
         /***** PIC COMPONENT *****/
         
@@ -366,7 +388,7 @@
         .image-thumbnail {
             margin: 0;
             padding: 0;
-            margin-right: 15px;
+            margin-right: 12px;
             height: 70px;
             width: 70px;
             border: 1px solid #55555a;
