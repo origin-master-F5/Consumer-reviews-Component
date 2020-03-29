@@ -19,10 +19,7 @@ class App extends React.Component {
             //accodion is selected
             view: 'up-chevron',
             reviews: [],
-            sort: '/reviews',
-            firstEight: [],
-            firstSixteen: [],
-            view: 'eight'
+            sort: '/reviews'
         }
         this.handleViewChange = this.handleViewChange.bind(this)
         this.changeSort = this.changeSort.bind(this)
@@ -31,11 +28,10 @@ class App extends React.Component {
         axios.get(this.state.sort)
             .then((data) => {
                 this.setState({
-                    reviews: data.data,
-                    firstEight: data.data.slice(0, 8),
-                    firstSixteen: data.data.slice(0, 16)
+                    reviews: data.data
                 })
             })
+
     }
     handleViewChange() {
         if (this.state.view === 'down-chevron') {
@@ -54,12 +50,11 @@ class App extends React.Component {
         }, () => axios.get(this.state.sort)
             .then((data) => {
                 this.setState({
-                    reviews: data.data,
-                    firstEight: data.data.slice(0, 8),
-                    firstSixteen: data.data.slice(0, 16)
+                    reviews: data.data
                 })
             }))
     }
+
     render() {
         console.log('acc state -->', this.state.view)
         if (this.state.view === 'down-chevron') {
