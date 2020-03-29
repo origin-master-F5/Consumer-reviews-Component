@@ -13,7 +13,7 @@ class Filter extends React.Component {
         return (
             <div className="filter-parent-div bottom-border-line">
                 <Verified />
-                <Search />
+                <Search changeSort={this.props.changeSort}/>
             </div>
         );
     }
