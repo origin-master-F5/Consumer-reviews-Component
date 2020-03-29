@@ -20,7 +20,7 @@ class App extends React.Component {
             view: 'up-chevron',
             reviews: [],
             sort: '/reviews',
-            sku: 1
+            sku: 3
         }
         this.handleViewChange = this.handleViewChange.bind(this)
         this.changeSort = this.changeSort.bind(this)
