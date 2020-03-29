@@ -3,6 +3,7 @@ import Snapshot from './Snapshot.jsx';
 import Gallery from './Gallery.jsx';
 import Filter from './Filter.jsx';
 import Review from './Review.jsx';
+import Accordion from './Accordion.jsx';
 
 //Review Component will be mapped to the DOM later
 
@@ -37,14 +38,7 @@ class App extends React.Component {
         console.log('acc state -->', this.state.view)
         if (this.state.view === 'down-chevron') {
             return (
-                <div className="all-components-wrapper">
-                    <div className="reviews-component-parent-div">
-                        <div onClick={this.handleViewChange} className="review-accordion bottom-border-line">
-                            <span className="reviews-title-text">Reviews</span>
-                            <span className={this.state.view}></span>
-                        </div>
-                    </div>
-                </div>
+                <Accordion />
             )
         } else {
             return (
@@ -57,7 +51,7 @@ class App extends React.Component {
                         <Snapshot />
                         <Gallery />
                         <Filter />
-                        <Review />
+                        <Review sort={'/reviews/help'}/>
                     </div>
                 </div>
             );

@@ -378,9 +378,10 @@
         /***** FILTER COMPONENT *****/
         
         .filter-parent-div {
-            overflow: hidden;
+            overflow: visible;
             height: 84px;
             width: 100%;
+            min-width: 900px;
         }
         /***** VERIFIED COMPONENT *****/
         
@@ -471,8 +472,7 @@
             float: left;
             padding-top: 25px;
             width: 70%;
-            overflow: hidden;
-            /* height: 1px; */
+            overflow: visible;
         }
         
         .search-bar-parent-div {
@@ -486,31 +486,48 @@
         .search-bar-form {
             padding: 0;
             margin: 0;
+            height: 35px;
+            min-width: 458px;
+            display: block;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 7px 7px 8px;
+            margin: 0;
+            font-size: 15px;
+            position: relative;
             border-radius: 4px;
             border: 1px solid #c5cbd5;
         }
         
-        .search-input {
-            width: 82%;
-            padding: 6px;
-            padding-top: 9px;
-            padding-bottom: 10px;
-            font-size: 13px;
+        .cancel-filler {
+            margin: 2px 0;
+            margin-top: 10px;
+            width: 35px;
             border: none;
+            background-color: transparent;
+            /* left: 380px; */
+            left: 85%;
+            bottom: 38px;
+            position: relative;
         }
         
         .cancel-txt-btn {
-            background: transparent;
-            padding: 5px;
-            padding-right: 3px;
+            margin: 2px 0;
+            margin-top: 10px;
+            width: 35px;
             border: none;
+            background-color: transparent;
+            /* left: 380px; */
+            left: 85%;
+            bottom: 38px;
+            position: relative;
         }
         
-        .cancel-txt-btn:after {
-            content: "\f00d";
-            font-family: FontAwesome;
-            font-size: 23px;
-            color: #0457c8;
+        .cancel-img {
+            height: 20px;
+            width: 20px;
         }
         
         .pipe-division {
@@ -519,31 +536,46 @@
             color: #55555a7a;
             padding: 0;
             margin: 0;
+            /* left: 370px; */
+            left: 83%;
+            bottom: 41px;
+            position: relative;
+        }
+        
+        .pipe-division-no-cancel {
+            font-size: 25px;
+            font-weight: 400;
+            color: #55555a7a;
+            padding: 0;
+            margin: 0;
+            margin-left: -100px;
         }
         
         .search-submit {
             background: transparent;
-            padding: 5px;
             padding-left: 2px;
             border: none;
+            /* left: 370px; */
+            left: 82%;
+            bottom: 37px;
+            position: relative;
         }
         
-        .search-submit:after {
-            content: "\f002";
-            font-family: FontAwesome;
-            font-size: 23px;
-            color: #0457c8;
+        .search-img {
+            height: 25px;
+            width: 25px;
         }
         /***** SORT COMPONENT *****/
         
         .sort-parent-div {
-            float: left;
+            /* float: left; */
+            left: 10%;
+            position: relative;
             overflow: hidden;
             width: 35%;
             margin: 0;
             margin-left: 30px;
             padding-bottom: 0;
-            padding-top: 8px;
         }
         
         .sort-title {

@@ -7,20 +7,20 @@ class Sort extends React.Component {
         this.state = {
             sort: '/reviews'
         }
-        this.handleClick = this.handleClick.bind(this)
+        this.handleChange = this.handleChange.bind(this)
     }
-    handleClick(e) {
+    handleChange(e) {
         this.setState({
             sort: e.target.value
         })
     }
     render() {
-        console.log(this.state.sort)
+        // console.log(this.state.sort)
         return (
             <div className="sort-parent-div">
                 <label className="sort-title"><b>Sort by</b></label>
                 <div className="dropdown-wrapper">
-                    <select className="sort-dropdown" onChange={this.handleClick}>
+                    <select className="sort-dropdown" onChange={this.handleChange}>
                         <option value="/reviews" >Most Relevant</option>
                         <option value="/reviews/help" >Most Helpful</option>
                         <option value="/reviews/recent" >Most Recent</option>
