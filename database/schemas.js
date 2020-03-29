@@ -21,7 +21,9 @@ const reviewSchema = new Schema({
         date: { type: Date, default: Date.now },
         helpfulCount: { type: Number, default: 0 },
         unhelpfulCount: { type: Number, default: 0 },
-    }]
+    }],
+    clickedHelp: { type: Boolean, default: false },
+    clickedReport: { type: Boolean, default: false }
 }, {
     timestamps: true
 });
