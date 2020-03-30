@@ -739,6 +739,10 @@
             color: #55555a;
         }
         
+        .recommended-wrapper {
+            margin-top: 20px;
+        }
+        
         .dark-check-mark:after {
             content: "\f058";
             font-family: FontAwesome;

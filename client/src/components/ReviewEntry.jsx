@@ -70,12 +70,12 @@ class ReviewEntry extends React.Component {
                         {
                             this.props.recommended
                                 ?
-                                <div>
+                                <div className="recommended-wrapper">
                                     <span className="dark-check-mark"></span>
                                     <strong className="true-recommend-text">I would recommend this to a friend</strong>
                                 </div>
                                 :
-                                <div>
+                                <div className="recommended-wrapper">
                                     <span className="dark-cancel-mark"></span>
                                     <strong className="false-recommend-text">No, I would not recommend this to a friend</strong>
                                 </div>
