@@ -4,7 +4,16 @@
         padding-left: 0;
         margin-left: 0;
         box-sizing: border-box;
-    } */
+    }
+     */
+    
+    #reviews {
+        color: #040c13;
+        font-family: 'Roboto', sans-serif;
+        padding-left: 0;
+        margin-left: 0;
+        box-sizing: border-box;
+    }
     
     ul {
         list-style-type: none;
@@ -236,11 +245,15 @@
     
     .proconlist-parent-div {
         overflow: hidden;
+        box-sizing: border-box;
+        min-width: 360px;
     }
     
     .compare-list {
+        box-sizing: border-box;
         float: left;
         width: 50%;
+        min-width: 181px;
     }
     
     .pros-cons-title {
@@ -746,7 +759,6 @@
     }
     
     .single-review-stars {
-        height: 17px;
         width: 91px;
         padding-top: 2px;
     }

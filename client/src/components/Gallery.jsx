@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import Pic from './Pic.jsx';
 
 
@@ -14,14 +13,7 @@ class Gallery extends React.Component {
         this.scrollRight = this.scrollRight.bind(this)
         this.scrollLeft = this.scrollLeft.bind(this)
     }
-    componentDidMount() {
-        axios.get(`${this.props.sort}/${this.props.sku}`)
-            .then((data) => {
-                this.setState({
-                    reviews: data.data
-                })
-            })
-    }
+
     scrollRight() {
         this.setState({
             margin: this.state.margin - 648
@@ -47,7 +39,7 @@ class Gallery extends React.Component {
                         }
                         <ul className="image-list">
                             <li className="img-list-item" style={{ marginLeft: `${this.state.margin}px` }}></li>
-                            {this.state.reviews.map((review, index) => {
+                            {this.props.reviews.map((review, index) => {
                                 if (review.pics.length > 0) {
                                     return review.pics.map((pic) => (
                                         <Pic key={pic._id} id={review._id} url={pic.url} />

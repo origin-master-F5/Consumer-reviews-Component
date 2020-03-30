@@ -3,7 +3,6 @@ const query = require('../database/models.js');
 module.exports = {
     all: (req, res) => {
         let sku = req.params.sku
-        console.log('sku -->', sku)
         query.getAll({ sku })
             .then((data) => res.status(200).send(data))
             .catch((err) => res.status(400).send(err));
