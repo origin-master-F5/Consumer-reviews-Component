@@ -699,6 +699,23 @@
         
         .review-heading {
             font-size: 18px;
+            /* width: 100%; */
+            /* display: inline-block; */
+        }
+        
+        .review-entry-stars {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .single-review-stars {
+            height: 17px;
+            width: 91px;
+            padding-top: 2px;
+        }
+        
+        .review-entry-title {
+            display: inline-block;
         }
         
         .review-entry-info {

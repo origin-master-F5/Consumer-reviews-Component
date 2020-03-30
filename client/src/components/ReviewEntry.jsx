@@ -10,6 +10,7 @@ class ReviewEntry extends React.Component {
         this.state = {}
     }
     render() {
+        console.log('props in reviewEntry->', this.props)
         let purchased;
         if (this.props.purchased) {
             purchased = this.props.purchased.substring(0, 10);
@@ -25,8 +26,10 @@ class ReviewEntry extends React.Component {
                     </div>
                     <div className="review-content-wrapper">
                         <div className="review-heading">
-                            <div className="review-entry-stars"></div>
-                            <h4>{this.props.title}</h4>
+                            <div className="review-entry-stars">
+                                <img className="single-review-stars" src={`./images/${this.props.rating}-star.png`}/>
+                            </div>
+                            <h4 className="review-entry-title">{this.props.title}</h4>
                         </div>
 
                         {

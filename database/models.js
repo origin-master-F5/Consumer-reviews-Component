@@ -20,4 +20,8 @@ module.exports = {
     commentMinusHelp: (id) => Review.update(id, { $inc: { "comments.$.helpfulCount": -1 } }, { new: true }),
     commentAddUnhelp: (id) => Review.update(id, { $inc: { "comments.$.unhelpfulCount": 1 } }, { new: true }),
     commentMinusUnhelp: (id) => Review.update(id, { $inc: { "comments.$.unhelpfulCount": -1 } }, { new: true }),
+
+    //changing help/report button detection
+    commentAddUnhelp: (id) => Review.update(id, { $inc: { "comments.$.unhelpfulCount": 1 } }, { new: true }),
+    commentMinusUnhelp: (id) => Review.update(id, { $inc: { "comments.$.unhelpfulCount": -1 } }, { new: true }),
 }
