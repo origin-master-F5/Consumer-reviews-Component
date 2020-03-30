@@ -34,6 +34,7 @@ class Review extends React.Component {
     render() {
         // this.props.sample.firstEight
         let eight = this.props.reviews.slice(0, 8)
+        console.log(eight)
         let sixteen = this.props.reviews.slice(0, 16)
             return (
                 <div className="review-parent-div">
@@ -41,7 +42,7 @@ class Review extends React.Component {
                         <span>Showing <strong>1-8</strong> of {this.props.reviews.length} reviews</span>
                     </div>
                     <ul>
-                        {this.getVerified(eight).map((review, index) => (
+                        {eight.map((review, index) => (
                             <ReviewEntry
                                 key={index}
                                 id={review._id}
@@ -57,6 +58,8 @@ class Review extends React.Component {
                                 helpful={review.helpfulCount}
                                 unhelpful={review.unhelpfulCount}
                                 comments={review.comments}
+                                clickedHelp={review.clickedHelp}
+                                clickedReport={review.clickedReport}
                             />
                         ))}
                     </ul>

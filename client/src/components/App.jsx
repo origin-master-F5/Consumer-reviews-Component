@@ -20,7 +20,7 @@ class App extends React.Component {
             view: 'up-chevron',
             reviews: [],
             sort: '/reviews',
-            sku: 3
+            sku: 1
         }
         this.handleViewChange = this.handleViewChange.bind(this)
         this.changeSort = this.changeSort.bind(this)
@@ -57,7 +57,6 @@ class App extends React.Component {
     }
 
     render() {
-        console.log('acc state -->', this.state.view)
         if (this.state.view === 'down-chevron') {
             return (
                 <Accordion view={this.state.view} changeView={() => this.handleViewChange} />

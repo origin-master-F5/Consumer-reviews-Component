@@ -29,17 +29,26 @@ class ReviewEntry extends React.Component {
                             <h4>{this.props.title}</h4>
                         </div>
 
-                        <div className="review-entry-info">
-                            <div className="verified-icon-wrapper">
-                                <button className="verified-btn">
-                                    <img className="v-checkmark" alt="checkmark" src="https://www.bestbuy.com/~assets/bby/_com/ugc-raas/ugc-common-assets/ugc-badge-verified-check.svg" />
-                                    <strong className="v-btn-text">Verified Purchase</strong>
-                                </button>
-                            </div>
+                        {
+                            this.props.verified
+                                ?
+                                <div className="review-entry-info">
+                                    <div className="verified-icon-wrapper">
+                                        <button className="verified-btn">
+                                            <img className="v-checkmark" alt="checkmark" src="https://www.bestbuy.com/~assets/bby/_com/ugc-raas/ugc-common-assets/ugc-badge-verified-check.svg" />
+                                            <strong className="v-btn-text">Verified Purchase</strong>
+                                        </button>
+                                    </div>
 
-                            {/* <span className="verified-pipe"> | </span> */}
-                            <div className="info-text">| Posted {moment(posted, "YYYYMMDD").fromNow()}. Owned for {moment(posted, "YYYYMMDD").from(purchased, "YYYYMMDD")} when reviewed.</div>
-                        </div>
+                                    <div className="info-text">| Posted {moment(posted, "YYYYMMDD").fromNow()}. Owned for {moment(posted, "YYYYMMDD").from(purchased, "YYYYMMDD")} when reviewed.</div>
+                                </div>
+                                :
+                                <div className="review-entry-info">
+                                    <div className="info-text">Posted {moment(posted, "YYYYMMDD").fromNow()}.</div>
+
+                                </div>
+
+                        }
 
                         <div className="review-body">
                             <p>{this.props.body}</p>
@@ -49,7 +58,7 @@ class ReviewEntry extends React.Component {
 
                                 this.props.pics.length > 0
                                     ?
-                                    this.props.pics.map((pic,index) => (
+                                    this.props.pics.map((pic, index) => (
                                         <Pic key={index} id={this.props.id} url={pic.url} />
                                     ))
                                     :
