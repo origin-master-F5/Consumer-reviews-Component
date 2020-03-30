@@ -41,9 +41,9 @@ class Gallery extends React.Component {
                         {
                             this.state.margin
                                 ?
-                                <img className="left-caret" src="/images/left-chevron-blue.png" onClick={this.scrollLeft} />
+                                <img className="left-caret" src="https://bby-reviews-images.s3-us-west-1.amazonaws.com/left-chevron-blue.png" onClick={this.scrollLeft} />
                                 :
-                                <img className="left-caret-grey" src="/images/left-chevron-grey.png" />
+                                <img className="left-caret-grey" src="https://bby-reviews-images.s3-us-west-1.amazonaws.com/left-chevron-grey.png" />
                         }
                         <ul className="image-list">
                             <li className="img-list-item" style={{ marginLeft: `${this.state.margin}px` }}></li>
@@ -58,9 +58,9 @@ class Gallery extends React.Component {
                         {
                             this.state.margin <= -648
                                 ?
-                                <img className="right-caret-grey" src="/images/right-chevron-grey.png" />
+                                <img className="right-caret-grey" src="https://bby-reviews-images.s3-us-west-1.amazonaws.com/right-chevron-grey.png" />
                                 :
-                                <img className="right-caret" src="/images/right-chevron-blue.png" onClick={this.scrollRight} />
+                                <img className="right-caret" src="https://bby-reviews-images.s3-us-west-1.amazonaws.com/right-chevron-blue.png" onClick={this.scrollRight} />
                         }
                     </div>
                 </div>

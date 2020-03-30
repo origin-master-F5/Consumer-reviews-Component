@@ -83,11 +83,6 @@ class App extends React.Component {
                 sortingStar: star
             })
         }
-        // this.setState({
-        //     starSort: true,
-        //     sortingStar: star
-        // }, () => console.log(`clicked!!! ${star}`, this.state))
-        
     }
 
 
