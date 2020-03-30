@@ -10,7 +10,6 @@ class ReviewEntry extends React.Component {
         this.state = {}
     }
     render() {
-        console.log('props in reviewEntry->', this.props)
         let purchased;
         if (this.props.purchased) {
             purchased = this.props.purchased.substring(0, 10);
@@ -31,7 +30,6 @@ class ReviewEntry extends React.Component {
                             </div>
                             <h4 className="review-entry-title">{this.props.title}</h4>
                         </div>
-
                         {
                             this.props.verified
                                 ?
@@ -42,23 +40,18 @@ class ReviewEntry extends React.Component {
                                             <strong className="v-btn-text">Verified Purchase</strong>
                                         </button>
                                     </div>
-
                                     <div className="info-text">| Posted {moment(posted, "YYYYMMDD").fromNow()}. Owned for {moment(posted, "YYYYMMDD").from(purchased, "YYYYMMDD")} when reviewed.</div>
                                 </div>
                                 :
                                 <div className="review-entry-info">
                                     <div className="info-text">Posted {moment(posted, "YYYYMMDD").fromNow()}.</div>
-
                                 </div>
-
                         }
-
                         <div className="review-body">
                             <p>{this.props.body}</p>
                         </div>
                         <ul>
                             {
-
                                 this.props.pics.length > 0
                                     ?
                                     this.props.pics.map((pic, index) => (
@@ -66,7 +59,6 @@ class ReviewEntry extends React.Component {
                                     ))
                                     :
                                     <span></span>
-
                             }
 
                         </ul>

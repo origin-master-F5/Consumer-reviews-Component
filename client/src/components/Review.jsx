@@ -31,7 +31,6 @@ class Review extends React.Component {
     }
     render() {
         let eight = this.props.reviews.slice(0, 8)
-        console.log(eight)
         let sixteen = this.props.reviews.slice(0, 16)
         return (
             <div className="review-parent-div">
@@ -87,6 +86,14 @@ class Review extends React.Component {
                             ))
                     }
                 </ul>
+                <div className="see-all-reviews-button-container bottom-border-line">
+                    <button className="see-more-reviews-btn">
+                        Show More
+                    </button>
+                    <a className="write-a-review" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                        Write a Review
+                    </a>
+                </div>
             </div>
         );
     }
