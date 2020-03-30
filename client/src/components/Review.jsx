@@ -9,39 +9,35 @@ class Review extends React.Component {
         super(props)
 
         this.state = {
-            firstEight: [],
-            firstSixteen: [],
-            view: 'eight'
+            cutBy: 0,
+            showMore: false
         }
+        this.handleClick = this.handleClick.bind(this)
     }
     componentDidMount() {
         this.setState({
-            firstEight: this.props.reviews.slice(0, 8),
-            firstSixteen: this.props.reviews.slice(0, 16)
+            cutBy: 8
         })
     }
-    getVerified(arr) {
-        let verifiedsOnly = []
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i].verified) {
-                verifiedsOnly.push(arr[i])
-            }
-        }
-        return verifiedsOnly
+    handleClick() {
+        this.setState({
+            cutBy: 16,
+            showMore: true
+        })
     }
     render() {
-        let eight = this.props.reviews.slice(0, 8)
-        let sixteen = this.props.reviews.slice(0, 16)
+        let sample = this.props.reviews.slice(0, this.state.cutBy)
+
         return (
             <div className="review-parent-div">
                 <div className="review-list-info">
-                    <span>Showing <strong>1-8</strong> of {this.props.reviews.length} reviews</span>
+                    <span>Showing <strong>1-{sample.length}</strong> of {this.props.reviews.length} reviews</span>
                 </div>
                 <ul>
                     {
                         this.props.verified
                             ?
-                            eight.map((review, index) => {
+                            sample.map((review, index) => {
                                 if (review.verified) {
                                     return <ReviewEntry
                                         key={index}
@@ -64,7 +60,7 @@ class Review extends React.Component {
                                 }
                             })
                             :
-                            eight.map((review, index) => (
+                            sample.map((review, index) => (
                                 <ReviewEntry
                                     key={index}
                                     id={review._id}
@@ -86,14 +82,27 @@ class Review extends React.Component {
                             ))
                     }
                 </ul>
-                <div className="see-all-reviews-button-container bottom-border-line">
-                    <button className="see-more-reviews-btn">
-                        Show More
-                    </button>
-                    <a className="write-a-review" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                        Write a Review
-                    </a>
-                </div>
+                {
+                    this.state.showMore
+                    ?
+                    <div className="see-all-reviews-button-container bottom-border-line">
+                        <button onClick={this.handleClick} className="see-more-reviews-btn">
+                            See All Customer Reviews
+                        </button>
+                        <a className="write-a-review" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                            Write a Review
+                        </a>
+                    </div>
+                    :
+                    <div className="see-all-reviews-button-container bottom-border-line">
+                        <button onClick={this.handleClick} className="see-more-reviews-btn">
+                            Show More
+                        </button>
+                        <a className="write-a-review" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                            Write a Review
+                        </a>
+                    </div>
+                }
             </div>
         );
     }
