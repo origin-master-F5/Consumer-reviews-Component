@@ -185,6 +185,7 @@ class App extends React.Component {
                             <span className={this.state.view}></span>
                         </div> */}
                         <Snapshot
+                            sortByStar={(star) => this.sortByStar(star)}
                             sort={this.state.sort}
                             sku={this.state.sku}
                             rateAvg={this.state.rateAvg}
