@@ -26,8 +26,8 @@ class Review extends React.Component {
         })
     }
     render() {
-        let sample = this.props.reviews.slice(0, this.state.cutBy)
 
+        let sample = this.props.reviews.slice(0, this.state.cutBy)
         return (
             <div className="review-parent-div">
                 <div className="review-list-info">
@@ -35,11 +35,87 @@ class Review extends React.Component {
                 </div>
                 <ul>
                     {
-                        this.props.verified
+                        this.props.starSort
                             ?
-                            sample.map((review, index) => {
-                                if (review.verified) {
-                                    return <ReviewEntry
+                            this.props.verified
+                                ?
+                                sample.map((review, index) => {
+                                    if (review.rating === this.props.sortingStar) {
+                                        if (review.verified) {
+                                            return <ReviewEntry
+                                                key={index}
+                                                id={review._id}
+                                                user={review.user}
+                                                rating={review.rating}
+                                                title={review.title}
+                                                verified={review.verified}
+                                                posted={review.createdAt}
+                                                purchased={review.purchasedDate}
+                                                body={review.body}
+                                                pics={review.pics}
+                                                recommended={review.recommended}
+                                                helpful={review.helpfulCount}
+                                                unhelpful={review.unhelpfulCount}
+                                                comments={review.comments}
+                                                clickedHelp={review.clickedHelp}
+                                                clickedReport={review.clickedReport}
+                                            />
+                                        }
+                                    }
+                                })
+                                :
+                                sample.map((review, index) => {
+                                    if (review.rating === this.props.sortingStar) {
+                                        return <ReviewEntry
+                                            key={index}
+                                            id={review._id}
+                                            user={review.user}
+                                            rating={review.rating}
+                                            title={review.title}
+                                            verified={review.verified}
+                                            posted={review.createdAt}
+                                            purchased={review.purchasedDate}
+                                            body={review.body}
+                                            pics={review.pics}
+                                            recommended={review.recommended}
+                                            helpful={review.helpfulCount}
+                                            unhelpful={review.unhelpfulCount}
+                                            comments={review.comments}
+                                            clickedHelp={review.clickedHelp}
+                                            clickedReport={review.clickedReport}
+                                        />
+                                    }
+                                })
+
+                            :
+
+                            this.props.verified
+                                ?
+                                sample.map((review, index) => {
+                                    if (review.verified) {
+                                        return <ReviewEntry
+                                            key={index}
+                                            id={review._id}
+                                            user={review.user}
+                                            rating={review.rating}
+                                            title={review.title}
+                                            verified={review.verified}
+                                            posted={review.createdAt}
+                                            purchased={review.purchasedDate}
+                                            body={review.body}
+                                            pics={review.pics}
+                                            recommended={review.recommended}
+                                            helpful={review.helpfulCount}
+                                            unhelpful={review.unhelpfulCount}
+                                            comments={review.comments}
+                                            clickedHelp={review.clickedHelp}
+                                            clickedReport={review.clickedReport}
+                                        />
+                                    }
+                                })
+                                :
+                                sample.map((review, index) => (
+                                    <ReviewEntry
                                         key={index}
                                         id={review._id}
                                         user={review.user}
@@ -57,51 +133,30 @@ class Review extends React.Component {
                                         clickedHelp={review.clickedHelp}
                                         clickedReport={review.clickedReport}
                                     />
-                                }
-                            })
-                            :
-                            sample.map((review, index) => (
-                                <ReviewEntry
-                                    key={index}
-                                    id={review._id}
-                                    user={review.user}
-                                    rating={review.rating}
-                                    title={review.title}
-                                    verified={review.verified}
-                                    posted={review.createdAt}
-                                    purchased={review.purchasedDate}
-                                    body={review.body}
-                                    pics={review.pics}
-                                    recommended={review.recommended}
-                                    helpful={review.helpfulCount}
-                                    unhelpful={review.unhelpfulCount}
-                                    comments={review.comments}
-                                    clickedHelp={review.clickedHelp}
-                                    clickedReport={review.clickedReport}
-                                />
-                            ))
+                                ))
+
                     }
                 </ul>
                 {
                     this.state.showMore
-                    ?
-                    <div className="see-all-reviews-button-container bottom-border-line">
-                        <button onClick={this.handleClick} className="see-more-reviews-btn">
-                            See All Customer Reviews
+                        ?
+                        <div className="see-all-reviews-button-container bottom-border-line">
+                            <button onClick={this.handleClick} className="see-more-reviews-btn">
+                                See All Customer Reviews
                         </button>
-                        <a className="write-a-review" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                            Write a Review
+                            <a className="write-a-review" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                                Write a Review
                         </a>
-                    </div>
-                    :
-                    <div className="see-all-reviews-button-container bottom-border-line">
-                        <button onClick={this.handleClick} className="see-more-reviews-btn">
-                            Show More
+                        </div>
+                        :
+                        <div className="see-all-reviews-button-container bottom-border-line">
+                            <button onClick={this.handleClick} className="see-more-reviews-btn">
+                                Show More
                         </button>
-                        <a className="write-a-review" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                            Write a Review
+                            <a className="write-a-review" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                                Write a Review
                         </a>
-                    </div>
+                        </div>
                 }
             </div>
         );

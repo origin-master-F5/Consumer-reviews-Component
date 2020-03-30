@@ -13,8 +13,6 @@ class Search extends React.Component {
         }
     }
     render() {
-        console.log('props in Search', this.props)
-
         return (
             <div className="search-and-sort-wrapper">
                 <div className="search-bar-parent-div">
@@ -28,7 +26,6 @@ class Search extends React.Component {
                                 </button>
                                 :
                                 <button className="cancel-filler">-</button>
-
                         }
                         <span className="pipe-division"> | </span>
                         <button className="search-submit" type="submit">
