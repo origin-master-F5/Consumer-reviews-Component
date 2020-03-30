@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 
 
 class BarGraph extends React.Component {
@@ -8,12 +7,6 @@ class BarGraph extends React.Component {
 
         this.state = {
             reviews: [],
-            fiveStar: 0,
-            fourStar: 0,
-            threeStar: 0,
-            twoStar: 0,
-            oneStar: 0,
-            totalCount: 0,
             checkOne: '',
             checkTwo: '',
             checkThree: '',
@@ -21,21 +14,6 @@ class BarGraph extends React.Component {
             checkFive: ''
         }
         this.handleCheck = this.handleCheck.bind(this)
-    }
-    componentDidMount() {
-        axios.get(`${this.props.sort}/${this.props.sku}`)
-            .then((data) => {
-                this.setState({
-                    reviews: data.data,
-                    fiveStar: this.getRatingCount(data.data, 5),
-                    fourStar: this.getRatingCount(data.data, 4),
-                    threeStar: this.getRatingCount(data.data, 3),
-                    twoStar: this.getRatingCount(data.data, 2),
-                    oneStar: this.getRatingCount(data.data, 1),
-                    totalCount: data.data.length
-                })
-            })
-
     }
     getRatingCount(arr, rating) {
         let rateCount = 0;
@@ -72,9 +50,9 @@ class BarGraph extends React.Component {
                             <span className="single-star"></span>
                         </div>
                         <div className="progress-bar-wrapper">
-                            <span className="progress-bar" style={{ width: `${Math.round((this.state.fiveStar / (this.state.totalCount)) * 100)}%` }}></span>
+                            <span className="progress-bar" style={{ width: `${Math.round((this.props.fiveStar / (this.props.count)) * 100)}%` }}></span>
                         </div>
-                        <span className="star-count-display">{this.state.fiveStar}</span>
+                        <span className="star-count-display">{this.props.fiveStar}</span>
                     </div>
                     <div onClick={() => this.handleCheck('checkFour', 4)} className="single-rating-bar">
                         <div className="checkbox">
@@ -86,9 +64,9 @@ class BarGraph extends React.Component {
                             <span className="single-star"></span>
                         </div>
                         <div className="progress-bar-wrapper">
-                            <span className="progress-bar" style={{ width: `${Math.round((this.state.fourStar / (this.state.totalCount)) * 100)}%` }}></span>
+                            <span className="progress-bar" style={{ width: `${Math.round((this.props.fourStar / (this.props.count)) * 100)}%` }}></span>
                         </div>
-                        <span>{this.state.fourStar}</span>
+                        <span>{this.props.fourStar}</span>
                     </div>
 
                     <div onClick={() => this.handleCheck('checkThree', 3)} className="single-rating-bar">
@@ -101,9 +79,9 @@ class BarGraph extends React.Component {
                             <span className="single-star"></span>
                         </div>
                         <div className="progress-bar-wrapper">
-                            <span className="progress-bar" style={{ width: `${Math.round((this.state.threeStar / (this.state.totalCount)) * 100)}%` }}></span>
+                            <span className="progress-bar" style={{ width: `${Math.round((this.props.threeStar / (this.props.count)) * 100)}%` }}></span>
                         </div>
-                        <span>{this.state.threeStar}</span>
+                        <span>{this.props.threeStar}</span>
                     </div>
 
                     <div onClick={() => this.handleCheck('checkTwo', 2)} className="single-rating-bar">
@@ -116,9 +94,9 @@ class BarGraph extends React.Component {
                             <span className="single-star"></span>
                         </div>
                         <div className="progress-bar-wrapper">
-                            <span className="progress-bar" style={{ width: `${Math.round((this.state.twoStar / (this.state.totalCount)) * 100)}%` }}></span>
+                            <span className="progress-bar" style={{ width: `${Math.round((this.props.twoStar / (this.props.count)) * 100)}%` }}></span>
                         </div>
-                        <span>{this.state.twoStar}</span>
+                        <span>{this.props.twoStar}</span>
                     </div>
 
                     <div onClick={() => this.handleCheck('checkOne', 1)} className="single-rating-bar">
@@ -131,9 +109,9 @@ class BarGraph extends React.Component {
                             <span className="single-star"></span>
                         </div>
                         <div className="progress-bar-wrapper">
-                            <span className="progress-bar" style={{ width: `${Math.round((this.state.oneStar / (this.state.totalCount)) * 100)}%` }}></span>
+                            <span className="progress-bar" style={{ width: `${Math.round((this.props.oneStar / (this.props.count)) * 100)}%` }}></span>
                         </div>
-                        <span>{this.state.oneStar}</span>
+                        <span>{this.props.oneStar}</span>
                     </div>
 
                 </div>

@@ -23,21 +23,74 @@ class App extends React.Component {
             sku: 1,
             verified: false,
             starSort: false,
-            sortingStar: 0
+            sortingStar: 0,
+            rateAvg: 0,
+            count: 0,
+            wouldRecommend: 0,
+            starAvg: 0,
+            fiveStarCount: 0,
+            fourStarCount: 0,
+            threeStarCount: 0,
+            twoStarCount: 0,
+            oneStarCount: 0,
         }
         this.handleViewChange = this.handleViewChange.bind(this)
         this.changeSort = this.changeSort.bind(this)
         this.switchVerified = this.switchVerified.bind(this)
         this.sortByStar = this.sortByStar.bind(this)
+        this.onHashChange = this.onHashChange.bind(this)
+        this.getNewItem = this.getNewItem.bind(this)
+        this.getRateAvg = this.getRateAvg.bind(this)
+        this.getRecommendedPercent = this.getRecommendedPercent.bind(this)
+        this.getStarAvg = this.getStarAvg.bind(this)
+        this.getRatingCount = this.getRatingCount.bind(this)
+    }
+    onHashChange() {
+        window.addEventListener('hashchange', () => {
+            console.log('in reviews component');
+            var sku = window.location.hash;
+            sku = sku.substring(1);
+            if (!isNaN(sku)) {
+                this.getNewItem(sku);
+            }
+        })
+    }
+    getNewItem(sku) {
+        axios.get(`${this.state.sort}/${sku}`)
+            .then((data) => {
+                this.setState({
+                    reviews: data.data,
+                    sku: sku,
+                    rateAvg: this.getRateAvg(data.data),
+                    count: data.data.length,
+                    wouldRecommend: this.getRecommendedPercent(data.data),
+                    starAvg: this.getStarAvg(data.data),
+                    fiveStarCount: this.getRatingCount(data.data, 5),
+                    fourStarCount: this.getRatingCount(data.data, 4),
+                    threeStarCount: this.getRatingCount(data.data, 3),
+                    twoStarCount: this.getRatingCount(data.data, 2),
+                    oneStarCount: this.getRatingCount(data.data, 1),
+                }, () => console.log('back sku', data.data))
+            })
     }
     componentDidMount() {
         axios.get(`${this.state.sort}/${this.state.sku}`)
             .then((data) => {
                 this.setState({
-                    reviews: data.data
+                    reviews: data.data,
+                    rateAvg: this.getRateAvg(data.data),
+                    count: data.data.length,
+                    wouldRecommend: this.getRecommendedPercent(data.data),
+                    starAvg: this.getStarAvg(data.data),
+                    fiveStarCount: this.getRatingCount(data.data, 5),
+                    fourStarCount: this.getRatingCount(data.data, 4),
+                    threeStarCount: this.getRatingCount(data.data, 3),
+                    twoStarCount: this.getRatingCount(data.data, 2),
+                    oneStarCount: this.getRatingCount(data.data, 1),
                 })
             })
-
+        this.onHashChange()
+        this.getNewItem
     }
     handleViewChange() {
         if (this.state.view === 'down-chevron') {
@@ -84,6 +137,38 @@ class App extends React.Component {
             })
         }
     }
+    getRateAvg(arr) {
+        let rateCount = 0;
+        for (let i = 0; i < arr.length; i++) {
+            rateCount += arr[i].rating
+        }
+        return Math.round((rateCount / arr.length) * 10) / 10
+    }
+    getRecommendedPercent(arr) {
+        let trueCount = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].recommended) {
+                trueCount++
+            }
+        }
+        return Math.round((trueCount / arr.length) * 100)
+    }
+    getStarAvg(arr) {
+        let starCount = 0;
+        for (let i = 0; i < arr.length; i++) {
+            starCount += arr[i].rating
+        }
+        return Math.round((starCount / (arr.length * 5)) * 100)
+    }
+    getRatingCount(arr, rating) {
+        let rateCount = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].rating === rating) {
+                rateCount++
+            }
+        }
+        return rateCount
+    }
 
 
     render() {
@@ -100,11 +185,20 @@ class App extends React.Component {
                             <span className={this.state.view}></span>
                         </div> */}
                         <Snapshot
+                            sortByStar={(star) => this.sortByStar(star)}
                             sort={this.state.sort}
                             sku={this.state.sku}
-                            sortByStar={(star) => this.sortByStar(star)}
+                            rateAvg={this.state.rateAvg}
+                            count={this.state.count}
+                            wouldRecommend={this.state.wouldRecommend}
+                            starAvg={this.state.starAvg}
+                            fiveStar={this.state.fiveStarCount}
+                            fourStar={this.state.fourStarCount}
+                            threeStar={this.state.threeStarCount}
+                            twoStar={this.state.twoStarCount}
+                            oneStar={this.state.oneStarCount}
                         />
-                        <Gallery sort={this.state.sort} sku={this.state.sku} />
+                        <Gallery reviews={this.state.reviews} />
                         <Filter
                             switchVerified={() => this.switchVerified}
                             changeSort={() => this.changeSort}

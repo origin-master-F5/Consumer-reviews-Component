@@ -1,7 +1,5 @@
 import React from 'react';
-import Pic from './Pic.jsx';
 import Comment from './Comment.jsx';
-import axios from 'axios';
 import ReviewEntry from './ReviewEntry.jsx';
 
 class Review extends React.Component {
