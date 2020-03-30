@@ -9,59 +9,157 @@ class Review extends React.Component {
         super(props)
 
         this.state = {
-            firstEight: [],
-            firstSixteen: [],
-            view: 'eight'
+            cutBy: 0,
+            showMore: false
         }
+        this.handleClick = this.handleClick.bind(this)
     }
     componentDidMount() {
-            this.setState({
-                firstEight: this.props.reviews.slice(0, 8),
-                firstSixteen: this.props.reviews.slice(0, 16)
-            })
+        this.setState({
+            cutBy: 8
+        })
     }
-    getVerified(arr) {
-        // if (clicked) {
-            let verifiedsOnly = []
-            for (let i = 0; i < arr.length; i++) {
-                if (arr[i].verified) {
-                    verifiedsOnly.push(arr[i])
-                }
-            }
-            return verifiedsOnly
-        // }
+    handleClick() {
+        this.setState({
+            cutBy: 16,
+            showMore: true
+        })
     }
     render() {
-        // this.props.sample.firstEight
-        let eight = this.props.reviews.slice(0, 8)
-        let sixteen = this.props.reviews.slice(0, 16)
-            return (
-                <div className="review-parent-div">
-                    <div className="review-list-info">
-                        <span>Showing <strong>1-8</strong> of {this.props.reviews.length} reviews</span>
-                    </div>
-                    <ul>
-                        {this.getVerified(eight).map((review, index) => (
-                            <ReviewEntry
-                                key={index}
-                                id={review._id}
-                                user={review.user}
-                                rating={review.rating}
-                                title={review.title}
-                                verified={review.verified}
-                                posted={review.createdAt}
-                                purchased={review.purchasedDate}
-                                body={review.body} 
-                                pics={review.pics}
-                                recommended={review.recommended}
-                                helpful={review.helpfulCount}
-                                unhelpful={review.unhelpfulCount}
-                                comments={review.comments}
-                            />
-                        ))}
-                    </ul>
+
+        let sample = this.props.reviews.slice(0, this.state.cutBy)
+        return (
+            <div className="review-parent-div">
+                <div className="review-list-info">
+                    <span>Showing <strong>1-{sample.length}</strong> of {this.props.reviews.length} reviews</span>
                 </div>
-            );
+                <ul>
+                    {
+                        this.props.starSort
+                            ?
+                            this.props.verified
+                                ?
+                                sample.map((review, index) => {
+                                    if (review.rating === this.props.sortingStar) {
+                                        if (review.verified) {
+                                            return <ReviewEntry
+                                                key={index}
+                                                id={review._id}
+                                                user={review.user}
+                                                rating={review.rating}
+                                                title={review.title}
+                                                verified={review.verified}
+                                                posted={review.createdAt}
+                                                purchased={review.purchasedDate}
+                                                body={review.body}
+                                                pics={review.pics}
+                                                recommended={review.recommended}
+                                                helpful={review.helpfulCount}
+                                                unhelpful={review.unhelpfulCount}
+                                                comments={review.comments}
+                                                clickedHelp={review.clickedHelp}
+                                                clickedReport={review.clickedReport}
+                                            />
+                                        }
+                                    }
+                                })
+                                :
+                                sample.map((review, index) => {
+                                    if (review.rating === this.props.sortingStar) {
+                                        return <ReviewEntry
+                                            key={index}
+                                            id={review._id}
+                                            user={review.user}
+                                            rating={review.rating}
+                                            title={review.title}
+                                            verified={review.verified}
+                                            posted={review.createdAt}
+                                            purchased={review.purchasedDate}
+                                            body={review.body}
+                                            pics={review.pics}
+                                            recommended={review.recommended}
+                                            helpful={review.helpfulCount}
+                                            unhelpful={review.unhelpfulCount}
+                                            comments={review.comments}
+                                            clickedHelp={review.clickedHelp}
+                                            clickedReport={review.clickedReport}
+                                        />
+                                    }
+                                })
+
+                            :
+
+                            this.props.verified
+                                ?
+                                sample.map((review, index) => {
+                                    if (review.verified) {
+                                        return <ReviewEntry
+                                            key={index}
+                                            id={review._id}
+                                            user={review.user}
+                                            rating={review.rating}
+                                            title={review.title}
+                                            verified={review.verified}
+                                            posted={review.createdAt}
+                                            purchased={review.purchasedDate}
+                                            body={review.body}
+                                            pics={review.pics}
+                                            recommended={review.recommended}
+                                            helpful={review.helpfulCount}
+                                            unhelpful={review.unhelpfulCount}
+                                            comments={review.comments}
+                                            clickedHelp={review.clickedHelp}
+                                            clickedReport={review.clickedReport}
+                                        />
+                                    }
+                                })
+                                :
+                                sample.map((review, index) => (
+                                    <ReviewEntry
+                                        key={index}
+                                        id={review._id}
+                                        user={review.user}
+                                        rating={review.rating}
+                                        title={review.title}
+                                        verified={review.verified}
+                                        posted={review.createdAt}
+                                        purchased={review.purchasedDate}
+                                        body={review.body}
+                                        pics={review.pics}
+                                        recommended={review.recommended}
+                                        helpful={review.helpfulCount}
+                                        unhelpful={review.unhelpfulCount}
+                                        comments={review.comments}
+                                        clickedHelp={review.clickedHelp}
+                                        clickedReport={review.clickedReport}
+                                    />
+                                ))
+
+                    }
+                </ul>
+                {
+                    this.state.showMore
+                        ?
+                        <div className="see-all-reviews-button-container bottom-border-line">
+                            <button onClick={this.handleClick} className="see-more-reviews-btn">
+                                See All Customer Reviews
+                        </button>
+                            <a className="write-a-review" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                                Write a Review
+                        </a>
+                        </div>
+                        :
+                        <div className="see-all-reviews-button-container bottom-border-line">
+                            <button onClick={this.handleClick} className="see-more-reviews-btn">
+                                Show More
+                        </button>
+                            <a className="write-a-review" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                                Write a Review
+                        </a>
+                        </div>
+                }
+            </div>
+        );
     }
 }
 

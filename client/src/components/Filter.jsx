@@ -12,7 +12,7 @@ class Filter extends React.Component {
     render() {
         return (
             <div className="filter-parent-div bottom-border-line">
-                <Verified />
+                <Verified switchVerified={this.props.switchVerified} reviews={this.props.reviews}/>
                 <Search changeSort={this.props.changeSort}/>
             </div>
         );

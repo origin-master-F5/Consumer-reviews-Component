@@ -14,7 +14,7 @@ class Summary extends React.Component {
         }
     }
     componentDidMount() {
-        axios.get('/reviews')
+        axios.get(`${this.props.sort}/${this.props.sku}`)
             .then((data) => {
                 this.setState({
                     allReviews: data.data,

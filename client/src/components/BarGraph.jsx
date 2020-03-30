@@ -23,7 +23,7 @@ class BarGraph extends React.Component {
         this.handleCheck = this.handleCheck.bind(this)
     }
     componentDidMount() {
-        axios.get('/reviews')
+        axios.get(`${this.props.sort}/${this.props.sku}`)
             .then((data) => {
                 this.setState({
                     reviews: data.data,
@@ -46,7 +46,7 @@ class BarGraph extends React.Component {
         }
         return rateCount
     }
-    handleCheck(marker) {
+    handleCheck(marker, star) {
         if (this.state[marker] === 'checkmark') {
             this.setState({
                 [marker]: ''
@@ -56,12 +56,13 @@ class BarGraph extends React.Component {
                 [marker]: 'checkmark'
             })
         }
+        this.props.sortByStar(star)
     }
     render() {
         return (
             <div className="bargraph-parent-div">
                 <div className="rating-bars">
-                    <div onClick={() => this.handleCheck('checkFive')} className="single-rating-bar">
+                    <div onClick={() => this.handleCheck('checkFive', 5)} className="single-rating-bar">
                         <div className="checkbox">
                             <i className={this.state.checkFive}></i>
                             <input type="checkbox" className="checkbox-filter" />
@@ -75,7 +76,7 @@ class BarGraph extends React.Component {
                         </div>
                         <span className="star-count-display">{this.state.fiveStar}</span>
                     </div>
-                    <div onClick={() => this.handleCheck('checkFour')} className="single-rating-bar">
+                    <div onClick={() => this.handleCheck('checkFour', 4)} className="single-rating-bar">
                         <div className="checkbox">
                             <i className={this.state.checkFour}></i>
                             <input type="checkbox" className="checkbox-filter" />
@@ -90,7 +91,7 @@ class BarGraph extends React.Component {
                         <span>{this.state.fourStar}</span>
                     </div>
 
-                    <div onClick={() => this.handleCheck('checkThree')} className="single-rating-bar">
+                    <div onClick={() => this.handleCheck('checkThree', 3)} className="single-rating-bar">
                         <div className="checkbox">
                             <i className={this.state.checkThree}></i>
                             <input type="checkbox" className="checkbox-filter" />
@@ -105,7 +106,7 @@ class BarGraph extends React.Component {
                         <span>{this.state.threeStar}</span>
                     </div>
 
-                    <div onClick={() => this.handleCheck('checkTwo')} className="single-rating-bar">
+                    <div onClick={() => this.handleCheck('checkTwo', 2)} className="single-rating-bar">
                         <div className="checkbox">
                             <i className={this.state.checkTwo}></i>
                             <input type="checkbox" className="checkbox-filter" />
@@ -120,7 +121,7 @@ class BarGraph extends React.Component {
                         <span>{this.state.twoStar}</span>
                     </div>
 
-                    <div onClick={() => this.handleCheck('checkOne')} className="single-rating-bar">
+                    <div onClick={() => this.handleCheck('checkOne', 1)} className="single-rating-bar">
                         <div className="checkbox">
                             <i className={this.state.checkOne}></i>
                             <input type="checkbox" className="checkbox-filter" />
