@@ -88,7 +88,7 @@ let samples = [{
         ],
         "recommended": true,
         "unhelpfulCount": 43,
-        "verified": true,
+        "verified": false,
         "comments": [{
             "user": "Tommy",
             "body": "Can you talk about a game you do not own??"

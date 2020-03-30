@@ -15,56 +15,80 @@ class Review extends React.Component {
         }
     }
     componentDidMount() {
-            this.setState({
-                firstEight: this.props.reviews.slice(0, 8),
-                firstSixteen: this.props.reviews.slice(0, 16)
-            })
+        this.setState({
+            firstEight: this.props.reviews.slice(0, 8),
+            firstSixteen: this.props.reviews.slice(0, 16)
+        })
     }
     getVerified(arr) {
-        // if (clicked) {
-            let verifiedsOnly = []
-            for (let i = 0; i < arr.length; i++) {
-                if (arr[i].verified) {
-                    verifiedsOnly.push(arr[i])
-                }
+        let verifiedsOnly = []
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].verified) {
+                verifiedsOnly.push(arr[i])
             }
-            return verifiedsOnly
-        // }
+        }
+        return verifiedsOnly
     }
     render() {
-        // this.props.sample.firstEight
         let eight = this.props.reviews.slice(0, 8)
         console.log(eight)
         let sixteen = this.props.reviews.slice(0, 16)
-            return (
-                <div className="review-parent-div">
-                    <div className="review-list-info">
-                        <span>Showing <strong>1-8</strong> of {this.props.reviews.length} reviews</span>
-                    </div>
-                    <ul>
-                        {eight.map((review, index) => (
-                            <ReviewEntry
-                                key={index}
-                                id={review._id}
-                                user={review.user}
-                                rating={review.rating}
-                                title={review.title}
-                                verified={review.verified}
-                                posted={review.createdAt}
-                                purchased={review.purchasedDate}
-                                body={review.body} 
-                                pics={review.pics}
-                                recommended={review.recommended}
-                                helpful={review.helpfulCount}
-                                unhelpful={review.unhelpfulCount}
-                                comments={review.comments}
-                                clickedHelp={review.clickedHelp}
-                                clickedReport={review.clickedReport}
-                            />
-                        ))}
-                    </ul>
+        return (
+            <div className="review-parent-div">
+                <div className="review-list-info">
+                    <span>Showing <strong>1-8</strong> of {this.props.reviews.length} reviews</span>
                 </div>
-            );
+                <ul>
+                    {
+                        this.props.verified
+                            ?
+                            eight.map((review, index) => {
+                                if (review.verified) {
+                                    return <ReviewEntry
+                                        key={index}
+                                        id={review._id}
+                                        user={review.user}
+                                        rating={review.rating}
+                                        title={review.title}
+                                        verified={review.verified}
+                                        posted={review.createdAt}
+                                        purchased={review.purchasedDate}
+                                        body={review.body}
+                                        pics={review.pics}
+                                        recommended={review.recommended}
+                                        helpful={review.helpfulCount}
+                                        unhelpful={review.unhelpfulCount}
+                                        comments={review.comments}
+                                        clickedHelp={review.clickedHelp}
+                                        clickedReport={review.clickedReport}
+                                    />
+                                }
+                            })
+                            :
+                            eight.map((review, index) => (
+                                <ReviewEntry
+                                    key={index}
+                                    id={review._id}
+                                    user={review.user}
+                                    rating={review.rating}
+                                    title={review.title}
+                                    verified={review.verified}
+                                    posted={review.createdAt}
+                                    purchased={review.purchasedDate}
+                                    body={review.body}
+                                    pics={review.pics}
+                                    recommended={review.recommended}
+                                    helpful={review.helpfulCount}
+                                    unhelpful={review.unhelpfulCount}
+                                    comments={review.comments}
+                                    clickedHelp={review.clickedHelp}
+                                    clickedReport={review.clickedReport}
+                                />
+                            ))
+                    }
+                </ul>
+            </div>
+        );
     }
 }
 

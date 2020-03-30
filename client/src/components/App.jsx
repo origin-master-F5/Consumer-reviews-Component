@@ -20,10 +20,12 @@ class App extends React.Component {
             view: 'up-chevron',
             reviews: [],
             sort: '/reviews',
-            sku: 1
+            sku: 1,
+            verified: false
         }
         this.handleViewChange = this.handleViewChange.bind(this)
         this.changeSort = this.changeSort.bind(this)
+        this.switchVerified = this.switchVerified.bind(this)
     }
     componentDidMount() {
         axios.get(`${this.state.sort}/${this.state.sku}`)
@@ -55,6 +57,17 @@ class App extends React.Component {
                 })
             }))
     }
+    switchVerified() {
+        if(this.state.verified) {
+            this.setState({
+                verified: false
+            })
+        } else {
+            this.setState({
+                verified: true
+            })
+        }
+    }
 
     render() {
         if (this.state.view === 'down-chevron') {
@@ -71,8 +84,8 @@ class App extends React.Component {
                         </div> */}
                         <Snapshot sort={this.state.sort} sku={this.state.sku}/>
                         <Gallery sort={this.state.sort} sku={this.state.sku}/>
-                        <Filter changeSort={() => this.changeSort} reviews={this.state.reviews}/>
-                        <Review reviews={this.state.reviews} sample={this.state} sort={this.state.sort} />
+                        <Filter switchVerified={() => this.switchVerified} changeSort={() => this.changeSort} reviews={this.state.reviews}/>
+                        <Review reviews={this.state.reviews} verified={this.state.verified} sort={this.state.sort} />
                     </div>
                 </div>
             );

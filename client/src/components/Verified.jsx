@@ -24,7 +24,7 @@ class Verified extends React.Component {
         return (
             <div className="verified-parent-div">
                 <label className="switch">
-                    <input type="checkbox" className="toggle-body"/>
+                    <input type="checkbox" className="toggle-body" onChange={this.props.switchVerified()}/>
                     <span className="slider"></span>
                 </label>
                 <div className="verified-switch-text">
