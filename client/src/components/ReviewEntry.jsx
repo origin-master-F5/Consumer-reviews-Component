@@ -26,7 +26,7 @@ class ReviewEntry extends React.Component {
                     <div className="review-content-wrapper">
                         <div className="review-heading">
                             <div className="review-entry-stars">
-                                <img className="single-review-stars" src={`./images/${this.props.rating}-star.png`}/>
+                                <img className="single-review-stars" src={`https://bby-reviews-images.s3-us-west-1.amazonaws.com/${this.props.rating}-star.png`}/>
                             </div>
                             <h4 className="review-entry-title">{this.props.title}</h4>
                         </div>

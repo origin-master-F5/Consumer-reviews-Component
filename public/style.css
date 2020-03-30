@@ -95,7 +95,7 @@
     }
     
     .summary-star-meter {
-        background: url("./images/starRatingMeter.png") repeat-x;
+        background: url("https://bby-reviews-images.s3-us-west-1.amazonaws.com/starRatingMeter.png") repeat-x;
         height: 31px;
         width: 140px;
         margin: 0;
@@ -103,7 +103,7 @@
     }
     
     .summary-star-meter-filler {
-        background: url("./images/starRatingMeter.png") repeat-x;
+        background: url("https://bby-reviews-images.s3-us-west-1.amazonaws.com/starRatingMeter.png") repeat-x;
         background-position: 0 100%;
         float: left;
         height: 31px;

@@ -22,14 +22,14 @@ class Search extends React.Component {
                             this.state.cancelDisplay
                                 ?
                                 <button className="cancel-txt-btn">
-                                    <img alt="cancel button" className="cancel-img" src="/images/cancel-btn.png" />
+                                    <img alt="cancel button" className="cancel-img" src="https://bby-reviews-images.s3-us-west-1.amazonaws.com/cancel-btn.png" />
                                 </button>
                                 :
                                 <button className="cancel-filler">-</button>
                         }
                         <span className="pipe-division"> | </span>
                         <button className="search-submit" type="submit">
-                            <img alt="search button" className="search-img" src="/images/search-btn.png" />
+                            <img alt="search button" className="search-img" src="https://bby-reviews-images.s3-us-west-1.amazonaws.com/search-btn.png" />
                         </button>
                     </form>
                 </div>
