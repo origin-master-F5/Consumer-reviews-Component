@@ -6,8 +6,6 @@ import Review from './Review.jsx';
 import Accordion from './Accordion.jsx';
 import axios from 'axios';
 
-//Review Component will be mapped to the DOM later
-
 class App extends React.Component {
     constructor(props) {
         super(props)
