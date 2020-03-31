@@ -21,6 +21,7 @@ button {
 .all-components-wrapper {
     padding-left: 25px;
     padding-right: 25px;
+    margin-top: 25px;
 }
 
 .review-accordion {
@@ -314,7 +315,7 @@ button {
     min-width: 720px;
     visibility: visible;
     max-width: 760px;
-    left: 15%;
+    left: 25%;
     text-align: center;
     background: none;
 }
@@ -545,7 +546,7 @@ button {
     width: 35px;
     border: none;
     background-color: transparent;
-    left: 85%;
+    left: 89%;
     bottom: 38px;
     position: relative;
 }
@@ -561,7 +562,7 @@ button {
     color: #55555a7a;
     padding: 0;
     margin: 0;
-    left: 83%;
+    left: 87%;
     bottom: 41px;
     position: relative;
 }
@@ -579,7 +580,7 @@ button {
     background: transparent;
     padding-left: 2px;
     border: none;
-    left: 82%;
+    left: 86%;
     bottom: 37px;
     position: relative;
 }
