@@ -3,6 +3,8 @@ const app = express();
 const router = require('./routes.js')
 const port = 3003;
 const path = require('path');
+require('dotenv').config()
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

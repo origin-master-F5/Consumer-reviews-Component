@@ -1,15 +1,17 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/bestbuy', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+require('dotenv').config()
+    //use environment variable here instead
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  // we're connected!
-  console.log('Mongo is connected!');
+    // we're connected!
+    console.log('Mongo is connected!');
 });
 
 module.exports = db;

@@ -22,7 +22,9 @@
         "mongoose": "5.9.4",
         "nodemon": "2.0.2",
         "react": "16.13.0",
-        "react-dom": "16.13.0"
+        "react-dom": "16.13.0",
+        "faker": "4.1.0",
+        "dotenv": "8.2.0"
     },
     "devDependencies": {
         "@babel/core": "^7.9.0",
