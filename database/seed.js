@@ -1,6 +1,13 @@
 // example data for reviews
 const db = require('./index.js');
 const Review = require('./schemas.js');
+const faker = require('faker')
+
+const randomRange = (min, max) => {
+    return Math.round(Math.random() * (max - min) + min)
+}
+
+const arrOfPics = ["https://pisces.bbystatic.com/image2/BestBuy_US/ugc/photos/thumbnail/fb57e3b34cab99f9c2dcfb56d545c8a5.jpg", "https://pisces.bbystatic.com/image2/BestBuy_US/ugc/photos/thumbnail/a5e778d2eb3032ed2547a0972a235803.jpg", "https://pisces.bbystatic.com/image2/BestBuy_US/ugc/photos/thumbnail/72a72bd4b1abfd0e25f08d8212d8cb48.jpg", "https://i.ytimg.com/vi/rNMDQuRHUkE/maxresdefault.jpg;maxHeight=140;maxWidth=140", "https://pisces.bbystatic.com/image2/BestBuy_US/ugc/photos/thumbnail/befe834333cfafb0038de4fb770868fb.jpg", "https://pisces.bbystatic.com/image2/BestBuy_US/ugc/photos/thumbnail/7f2f6d39d97765efa9f31b9a3b0c9edc.jpg"]
 
 let samples = [{
         "sku": 1,
@@ -98,13 +105,41 @@ let samples = [{
 
 const generateData = (generations) => {
         //generate data
+        let reviews = [];
+
+        while (generations) {
+            let obj = {}
+            obj.sku = randomRange(1, 100)
+            obj.title = faker.commerce.productName()
+            obj.rating = randomRange(1, 5)
+            obj.user = faker.internet.userName()
+            obj.body = faker.lorem.paragraphs()
+            obj.pics = [{ url: arrOfPics[randomRange(0, arrOfPics.length - 1)] }]
+            obj.helpfulCount = randomRange(0, 5)
+            obj.unhelpfulCount = randomRange(0, 5)
+            if (Math.random() > 0.8) {
+                obj.recommended = false
+            } else {
+                obj.recommended = true
+            }
+            if (Math.random() > 0.8) {
+                obj.verified = false
+            } else {
+                obj.verified = true
+            }
+            obj.purchasedDate = faker.date.past(2)
+            reviews.push(obj)
+            generations--
+        }
+
+        return reviews
     }
     //////////////////////////////////////////////////////////
     //   NEED TO CREATE FUNCTION TO CREATE UNIQUE REVIEWS   //
     //////////////////////////////////////////////////////////
 const insertSamples = () => {
     Review.deleteMany({})
-        .then(Review.create(samples))
+        .then(Review.create(samples.concat(generateData(1000))))
         .then(() => console.log('ready to close mongo!'))
 }
 
