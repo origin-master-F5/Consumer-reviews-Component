@@ -13,7 +13,7 @@ class App extends React.Component {
         this.state = {
             //view will be set to 'up-chevron' for the sake
             //of our demo, but typically it will initially be
-            //set to 'down-chevron' and change depending on if the 
+            //set to 'down-chevron' and change depending on if the
             //accordion is selected
             view: 'up-chevron',
             reviews: [],
@@ -45,7 +45,6 @@ class App extends React.Component {
     }
     onHashChange() {
         window.addEventListener('hashchange', () => {
-            console.log('in reviews component');
             var sku = window.location.hash;
             sku = sku.substring(1);
             if (!isNaN(sku)) {
@@ -68,7 +67,7 @@ class App extends React.Component {
                     threeStarCount: this.getRatingCount(data.data, 3),
                     twoStarCount: this.getRatingCount(data.data, 2),
                     oneStarCount: this.getRatingCount(data.data, 1),
-                }, () => console.log('back sku', data.data))
+                })
             })
     }
     componentDidMount() {
@@ -127,7 +126,7 @@ class App extends React.Component {
             this.setState({
                 starSort: false,
                 sortingStar: 0
-            }, () => console.log(`clicked!!! ${star}`, this.state))
+            })
         } else {
             this.setState({
                 starSort: true,

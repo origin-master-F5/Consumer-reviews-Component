@@ -15,7 +15,6 @@ class Sort extends React.Component {
         })
     }
     render() {
-        // console.log(this.state.sort)
         return (
             <div className="sort-parent-div">
                 <label className="sort-title"><b>Sort by</b></label>
