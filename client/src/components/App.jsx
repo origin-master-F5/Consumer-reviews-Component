@@ -29,10 +29,6 @@ class App extends React.Component {
             verified: false, //added to redux
             starSort: false, //added to redux
             sortingStar: 0, //added to redux
-            rateAvg: 0,
-            count: 0,
-            wouldRecommend: 0,
-            starAvg: 0,
         }
         this.handleViewChange = this.handleViewChange.bind(this)
         this.changeSort = this.changeSort.bind(this)
@@ -40,10 +36,6 @@ class App extends React.Component {
         this.sortByStar = this.sortByStar.bind(this)
         this.onHashChange = this.onHashChange.bind(this)
         this.getNewItem = this.getNewItem.bind(this)
-        this.getRateAvg = this.getRateAvg.bind(this)
-        this.getRecommendedPercent = this.getRecommendedPercent.bind(this)
-        this.getStarAvg = this.getStarAvg.bind(this)
-        this.getRatingCount = this.getRatingCount.bind(this)
     }
     onHashChange() {
         window.addEventListener('hashchange', () => {
@@ -60,10 +52,6 @@ class App extends React.Component {
                 this.setState({
                     reviews: data.data,
                     sku: sku,
-                    rateAvg: this.getRateAvg(data.data),
-                    count: data.data.length,
-                    wouldRecommend: this.getRecommendedPercent(data.data),
-                    starAvg: this.getStarAvg(data.data),
                 })
             })
     }
@@ -73,10 +61,6 @@ class App extends React.Component {
             .then((data) => {
                 this.setState({
                     reviews: data.data,
-                    rateAvg: this.getRateAvg(data.data),
-                    count: data.data.length,
-                    wouldRecommend: this.getRecommendedPercent(data.data),
-                    starAvg: this.getStarAvg(data.data),
                 })
             })
         this.onHashChange()
@@ -127,34 +111,7 @@ class App extends React.Component {
             })
         }
     }
-    getRateAvg(arr) {
-        let rateCount = 0;
-        arr.forEach((review) => rateCount += review.rating)
-        return Math.round((rateCount / arr.length) * 10) / 10
-    }
-    getRecommendedPercent(arr) {
-        let trueCount = 0;
-        arr.forEach((review) => {
-          if (review.recommended) {
-            trueCount++
-          }
-        })
-        return Math.round((trueCount / arr.length) * 100)
-    }
-    getStarAvg(arr) {
-        let starCount = 0;
-        arr.forEach((review) => starCount += review.rating)
-        return Math.round((starCount / (arr.length * 5)) * 100)
-    }
-    getRatingCount(arr, rating) {
-        let rateCount = 0;
-        arr.forEach((review) => {
-          if (review.rating === rating) {
-            rateCount++
-          }
-        })
-        return rateCount
-    }
+
 
 
     render() {
@@ -172,12 +129,6 @@ class App extends React.Component {
                         </div> */}
                         <Snapshot
                             sortByStar={(star) => this.sortByStar(star)}
-                            sort={this.state.sort}
-                            sku={this.state.sku}
-                            rateAvg={this.state.rateAvg}
-                            count={this.state.count}
-                            wouldRecommend={this.state.wouldRecommend}
-                            starAvg={this.state.starAvg}
                         />
                         <Gallery reviews={this.state.reviews} />
                         <Filter

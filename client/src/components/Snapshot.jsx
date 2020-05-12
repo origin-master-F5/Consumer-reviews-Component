@@ -15,17 +15,9 @@ class Snapshot extends React.Component {
     render() {
         return (
             <div className="snapshot-parent-div">
-                <Summary
-                    rateAvg={this.props.rateAvg}
-                    count={this.props.count}
-                    wouldRecommend={this.props.wouldRecommend}
-                    starAvg={this.props.starAvg}
-                />
+                <Summary />
                 <div className="snapshot-spacer"><p> </p></div>
                 <BarGraph
-                    sort={this.props.sort}
-                    count={this.props.count}
-                    sku={this.props.sku}
                     sortByStar={(star) => this.props.sortByStar(star)}
                 />
                 <div className="snapshot-spacer"><p> </p></div>

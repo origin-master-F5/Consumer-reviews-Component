@@ -40,6 +40,7 @@ class BarGraph extends React.Component {
                 [marker]: 'checkmark'
             })
         }
+        //change sort by start so that it's a method that updates redux state
         this.props.sortByStar(star)
     }
     render() {
