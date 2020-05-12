@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { getReviews } from '../actions/index';
+import { sortByStar } from '../actions/index';
 import RatingBar from './RatingBar.jsx'
 
 const mapStateToProps = state => {
@@ -40,8 +40,20 @@ class BarGraph extends React.Component {
                 [marker]: 'checkmark'
             })
         }
-        //change sort by start so that it's a method that updates redux state
-        this.props.sortByStar(star)
+
+        // this.props.sortByStar(star) //will delete when i finish review entry
+
+        if (this.props.starSort) {
+          this.props.sortByStar({
+              starSort: false,
+              sortingStar: 0
+          })
+      } else {
+          this.props.sortByStar({
+              starSort: true,
+              sortingStar: star
+          })
+      }
     }
     render() {
 
@@ -91,5 +103,5 @@ class BarGraph extends React.Component {
 
 export default connect(
   mapStateToProps,
-  { getReviews }
+  { sortByStar }
 )(BarGraph)

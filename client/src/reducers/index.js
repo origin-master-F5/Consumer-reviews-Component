@@ -1,4 +1,4 @@
-import { ADD_TEST, GET_REVIEWS } from '../constants/action-types'
+import { ADD_TEST, GET_REVIEWS, SORT_STAR } from '../constants/action-types'
 
 const iniitialState = {
     test: [],
@@ -25,6 +25,12 @@ function rootReducer(state = iniitialState, action) {
         }
     }
 
+    if (action.type === SORT_STAR) {
+        return {
+            ...state,
+            ...action.payload
+        }
+    }
     return state
 }
 

@@ -98,6 +98,7 @@ class App extends React.Component {
             })
         }
     }
+    //will delete after fixing review entry
     sortByStar(star) {
         if (this.state.starSort) {
             this.setState({
