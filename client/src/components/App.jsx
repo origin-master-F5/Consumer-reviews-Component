@@ -13,12 +13,12 @@ class App extends React.Component {
         this.state = {
             //view will be set to 'up-chevron' for the sake
             //of our demo, but typically it will initially be
-            //set to 'down-chevron' and change depending on if the 
+            //set to 'down-chevron' and change depending on if the
             //accordion is selected
             view: 'up-chevron',
-            reviews: [],
-            sort: '/reviews',
-            sku: 1,
+            reviews: [], //added to redux
+            sort: '/reviews', //added to redux
+            sku: 1, //added to redux
             verified: false,
             starSort: false,
             sortingStar: 0,
@@ -45,7 +45,6 @@ class App extends React.Component {
     }
     onHashChange() {
         window.addEventListener('hashchange', () => {
-            console.log('in reviews component');
             var sku = window.location.hash;
             sku = sku.substring(1);
             if (!isNaN(sku)) {
@@ -68,7 +67,7 @@ class App extends React.Component {
                     threeStarCount: this.getRatingCount(data.data, 3),
                     twoStarCount: this.getRatingCount(data.data, 2),
                     oneStarCount: this.getRatingCount(data.data, 1),
-                }, () => console.log('back sku', data.data))
+                })
             })
     }
     componentDidMount() {
@@ -127,7 +126,7 @@ class App extends React.Component {
             this.setState({
                 starSort: false,
                 sortingStar: 0
-            }, () => console.log(`clicked!!! ${star}`, this.state))
+            })
         } else {
             this.setState({
                 starSort: true,
@@ -137,34 +136,30 @@ class App extends React.Component {
     }
     getRateAvg(arr) {
         let rateCount = 0;
-        for (let i = 0; i < arr.length; i++) {
-            rateCount += arr[i].rating
-        }
+        arr.forEach((review) => rateCount += review.rating)
         return Math.round((rateCount / arr.length) * 10) / 10
     }
     getRecommendedPercent(arr) {
         let trueCount = 0;
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i].recommended) {
-                trueCount++
-            }
-        }
+        arr.forEach((review) => {
+          if (review.recommended) {
+            trueCount++
+          }
+        })
         return Math.round((trueCount / arr.length) * 100)
     }
     getStarAvg(arr) {
         let starCount = 0;
-        for (let i = 0; i < arr.length; i++) {
-            starCount += arr[i].rating
-        }
+        arr.forEach((review) => starCount += review.rating)
         return Math.round((starCount / (arr.length * 5)) * 100)
     }
     getRatingCount(arr, rating) {
         let rateCount = 0;
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i].rating === rating) {
-                rateCount++
-            }
-        }
+        arr.forEach((review) => {
+          if (review.rating === rating) {
+            rateCount++
+          }
+        })
         return rateCount
     }
 
