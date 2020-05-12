@@ -140,7 +140,6 @@ class App extends React.Component {
                         <Review
                             starSort={this.state.starSort}
                             sortingStar={this.state.sortingStar}
-                            reviews={this.state.reviews}
                             verified={this.state.verified}
                             sort={this.state.sort}
                         />
