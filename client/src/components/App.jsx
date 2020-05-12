@@ -32,8 +32,6 @@ class App extends React.Component {
         }
         this.handleViewChange = this.handleViewChange.bind(this)
         this.changeSort = this.changeSort.bind(this)
-        this.switchVerified = this.switchVerified.bind(this)
-        this.sortByStar = this.sortByStar.bind(this)
         this.onHashChange = this.onHashChange.bind(this)
         this.getNewItem = this.getNewItem.bind(this)
     }
@@ -87,32 +85,6 @@ class App extends React.Component {
                 })
             }))
     }
-    switchVerified() {
-        if (this.state.verified) {
-            this.setState({
-                verified: false
-            })
-        } else {
-            this.setState({
-                verified: true
-            })
-        }
-    }
-    //will delete after fixing review entry
-    sortByStar(star) {
-        if (this.state.starSort) {
-            this.setState({
-                starSort: false,
-                sortingStar: 0
-            })
-        } else {
-            this.setState({
-                starSort: true,
-                sortingStar: star
-            })
-        }
-    }
-
 
 
     render() {
@@ -131,9 +103,7 @@ class App extends React.Component {
                         <Snapshot />
                         <Gallery reviews={this.state.reviews} />
                         <Filter
-                            switchVerified={() => this.switchVerified}
                             changeSort={() => this.changeSort}
-                            reviews={this.state.reviews}
                         />
                         <Review />
                     </div>
