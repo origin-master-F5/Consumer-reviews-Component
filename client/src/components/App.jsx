@@ -31,7 +31,6 @@ class App extends React.Component {
             sortingStar: 0, //added to redux
         }
         this.handleViewChange = this.handleViewChange.bind(this)
-        this.changeSort = this.changeSort.bind(this)
         this.onHashChange = this.onHashChange.bind(this)
         this.getNewItem = this.getNewItem.bind(this)
     }
@@ -75,17 +74,6 @@ class App extends React.Component {
             })
         }
     }
-    changeSort(e) {
-        this.setState({
-            sort: e.target.value
-        }, () => axios.get(`${this.state.sort}/${this.state.sku}`)
-            .then((data) => {
-                this.setState({
-                    reviews: data.data
-                })
-            }))
-    }
-
 
     render() {
         if (this.state.view === 'down-chevron') {
