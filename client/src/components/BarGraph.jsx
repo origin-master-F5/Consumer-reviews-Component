@@ -13,7 +13,6 @@ class BarGraph extends React.Component {
         super(props)
 
         this.state = {
-            reviews: [],
             checkOne: '',
             checkTwo: '',
             checkThree: '',

@@ -26,18 +26,13 @@ class App extends React.Component {
             reviews: [], //added to redux
             sort: '/reviews', //added to redux
             sku: 1, //added to redux
-            verified: false,
-            starSort: false,
-            sortingStar: 0,
+            verified: false, //added to redux
+            starSort: false, //added to redux
+            sortingStar: 0, //added to redux
             rateAvg: 0,
             count: 0,
             wouldRecommend: 0,
             starAvg: 0,
-            fiveStarCount: 0,
-            fourStarCount: 0,
-            threeStarCount: 0,
-            twoStarCount: 0,
-            oneStarCount: 0,
         }
         this.handleViewChange = this.handleViewChange.bind(this)
         this.changeSort = this.changeSort.bind(this)
@@ -69,11 +64,6 @@ class App extends React.Component {
                     count: data.data.length,
                     wouldRecommend: this.getRecommendedPercent(data.data),
                     starAvg: this.getStarAvg(data.data),
-                    fiveStarCount: this.getRatingCount(data.data, 5),
-                    fourStarCount: this.getRatingCount(data.data, 4),
-                    threeStarCount: this.getRatingCount(data.data, 3),
-                    twoStarCount: this.getRatingCount(data.data, 2),
-                    oneStarCount: this.getRatingCount(data.data, 1),
                 })
             })
     }
@@ -87,11 +77,6 @@ class App extends React.Component {
                     count: data.data.length,
                     wouldRecommend: this.getRecommendedPercent(data.data),
                     starAvg: this.getStarAvg(data.data),
-                    fiveStarCount: this.getRatingCount(data.data, 5),
-                    fourStarCount: this.getRatingCount(data.data, 4),
-                    threeStarCount: this.getRatingCount(data.data, 3),
-                    twoStarCount: this.getRatingCount(data.data, 2),
-                    oneStarCount: this.getRatingCount(data.data, 1),
                 })
             })
         this.onHashChange()
@@ -193,11 +178,6 @@ class App extends React.Component {
                             count={this.state.count}
                             wouldRecommend={this.state.wouldRecommend}
                             starAvg={this.state.starAvg}
-                            fiveStar={this.state.fiveStarCount}
-                            fourStar={this.state.fourStarCount}
-                            threeStar={this.state.threeStarCount}
-                            twoStar={this.state.twoStarCount}
-                            oneStar={this.state.oneStarCount}
                         />
                         <Gallery reviews={this.state.reviews} />
                         <Filter

@@ -4,7 +4,10 @@ const iniitialState = {
     test: [],
     reviews: [],
     sku: 1,
-    sort: '/reviews'
+    sort: '/reviews',
+    starSort: false,
+    sortingStar: 0,
+    verified: false
 }
 
 function rootReducer(state = iniitialState, action) {
