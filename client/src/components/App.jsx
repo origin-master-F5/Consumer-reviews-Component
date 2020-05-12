@@ -128,21 +128,14 @@ class App extends React.Component {
                             <span className="reviews-title-text">Reviews</span>
                             <span className={this.state.view}></span>
                         </div> */}
-                        <Snapshot
-                            sortByStar={(star) => this.sortByStar(star)}
-                        />
+                        <Snapshot />
                         <Gallery reviews={this.state.reviews} />
                         <Filter
                             switchVerified={() => this.switchVerified}
                             changeSort={() => this.changeSort}
                             reviews={this.state.reviews}
                         />
-                        <Review
-                            starSort={this.state.starSort}
-                            sortingStar={this.state.sortingStar}
-                            verified={this.state.verified}
-                            sort={this.state.sort}
-                        />
+                        <Review />
                     </div>
                 </div>
             );

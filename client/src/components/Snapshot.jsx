@@ -15,7 +15,7 @@ class Snapshot extends React.Component {
             <div className="snapshot-parent-div">
                 <Summary />
                 <div className="snapshot-spacer"><p> </p></div>
-                <BarGraph sortByStar={(star) => this.props.sortByStar(star)} />
+                <BarGraph />
                 <div className="snapshot-spacer"><p> </p></div>
                 <ProConList />
             </div>

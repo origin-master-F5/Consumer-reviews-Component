@@ -41,8 +41,6 @@ class BarGraph extends React.Component {
             })
         }
 
-        // this.props.sortByStar(star) //will delete when i finish review entry
-
         if (this.props.starSort) {
           this.props.sortByStar({
               starSort: false,

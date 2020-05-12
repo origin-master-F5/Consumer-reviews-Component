@@ -2,7 +2,6 @@ import React from 'react';
 import Comment from './Comment.jsx';
 import ReviewEntry from './ReviewEntry.jsx';
 import { connect } from 'react-redux';
-import { sortByStar } from '../actions/index';
 
 const mapStateToProps = state => {
   return { ...state }
@@ -163,6 +162,5 @@ class Review extends React.Component {
 }
 
 export default connect(
-  mapStateToProps,
-  { sortByStar }
+  mapStateToProps
 )(Review)
