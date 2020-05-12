@@ -89,7 +89,7 @@ class App extends React.Component {
                             <span className={this.state.view}></span>
                         </div> */}
                         <Snapshot />
-                        <Gallery reviews={this.state.reviews} />
+                        <Gallery />
                         <Filter />
                         <Review />
                     </div>
