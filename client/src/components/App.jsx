@@ -10,12 +10,7 @@ import { getReviews } from '../actions/index';
 
 
 const mapStateToProps = state => {
-  return {reviews: state.reviews}
-}
-const mapDispatchToProps = dispatch => {
-  return {
-    getReviews: () => dispatch(getReviews())
-  }
+  return { ...state }
 }
 
 class App extends React.Component {
@@ -84,7 +79,6 @@ class App extends React.Component {
     }
     componentDidMount() {
       this.props.getReviews().then(() => console.log(this.props))
-      console.log(this.props)
         axios.get(`${this.state.sort}/${this.state.sku}`)
             .then((data) => {
                 this.setState({
@@ -225,4 +219,7 @@ class App extends React.Component {
     }
 }
 
-export default connect(mapStateToProps, { getReviews })(App)
+export default connect(
+  mapStateToProps,
+  { getReviews }
+)(App)
