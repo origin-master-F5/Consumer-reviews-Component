@@ -2,7 +2,9 @@ import { ADD_TEST, GET_REVIEWS } from '../constants/action-types'
 
 const iniitialState = {
     test: [],
-    reviews: []
+    reviews: [],
+    sku: 1,
+    sort: '/reviews'
 }
 
 function rootReducer(state = iniitialState, action) {

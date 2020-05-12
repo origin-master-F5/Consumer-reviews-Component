@@ -10,11 +10,9 @@ export function addTest(payload) {
     }
 }
 
-export const getReviews = () => (dispatch) => {
-    //will later need to change endpoint so that it changes with state
-    return axios.get('/reviews/1')
-        .then(({ data }) => {
-            return dispatch({ type: GET_REVIEWS, payload: data })
-        })
+export const getReviews = () => (dispatch, getState) => {
+    const { sort, sku } = getState()
+    return axios.get(`${sort}/${sku}`)
+        .then(({ data }) => dispatch({ type: GET_REVIEWS, payload: data }))
         .catch(err => console.log('failed to get reviews. ERROR-->', err))
 }
