@@ -16,9 +16,9 @@ class App extends React.Component {
             //set to 'down-chevron' and change depending on if the
             //accordion is selected
             view: 'up-chevron',
-            reviews: [],
-            sort: '/reviews',
-            sku: 1,
+            reviews: [], //added to redux
+            sort: '/reviews', //added to redux
+            sku: 1, //added to redux
             verified: false,
             starSort: false,
             sortingStar: 0,
@@ -136,34 +136,30 @@ class App extends React.Component {
     }
     getRateAvg(arr) {
         let rateCount = 0;
-        for (let i = 0; i < arr.length; i++) {
-            rateCount += arr[i].rating
-        }
+        arr.forEach((review) => rateCount += review.rating)
         return Math.round((rateCount / arr.length) * 10) / 10
     }
     getRecommendedPercent(arr) {
         let trueCount = 0;
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i].recommended) {
-                trueCount++
-            }
-        }
+        arr.forEach((review) => {
+          if (review.recommended) {
+            trueCount++
+          }
+        })
         return Math.round((trueCount / arr.length) * 100)
     }
     getStarAvg(arr) {
         let starCount = 0;
-        for (let i = 0; i < arr.length; i++) {
-            starCount += arr[i].rating
-        }
+        arr.forEach((review) => starCount += review.rating)
         return Math.round((starCount / (arr.length * 5)) * 100)
     }
     getRatingCount(arr, rating) {
         let rateCount = 0;
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i].rating === rating) {
-                rateCount++
-            }
-        }
+        arr.forEach((review) => {
+          if (review.rating === rating) {
+            rateCount++
+          }
+        })
         return rateCount
     }
 
