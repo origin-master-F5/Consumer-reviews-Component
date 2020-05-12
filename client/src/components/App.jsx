@@ -5,6 +5,18 @@ import Filter from './Filter.jsx';
 import Review from './Review.jsx';
 import Accordion from './Accordion.jsx';
 import axios from 'axios';
+import { connect } from 'react-redux'
+import { getReviews } from '../actions/index';
+
+
+const mapStateToProps = state => {
+  return {reviews: state.reviews}
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    getReviews: () => dispatch(getReviews())
+  }
+}
 
 class App extends React.Component {
     constructor(props) {
@@ -71,6 +83,8 @@ class App extends React.Component {
             })
     }
     componentDidMount() {
+      this.props.getReviews().then(() => console.log(this.props))
+      console.log(this.props)
         axios.get(`${this.state.sort}/${this.state.sku}`)
             .then((data) => {
                 this.setState({
@@ -211,4 +225,4 @@ class App extends React.Component {
     }
 }
 
-export default App
+export default connect(mapStateToProps, { getReviews })(App)
