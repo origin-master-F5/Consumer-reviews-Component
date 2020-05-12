@@ -1,4 +1,4 @@
-import { ADD_TEST, GET_REVIEWS, SORT_STAR } from '../constants/action-types'
+import { ADD_TEST, GET_REVIEWS, SORT_STAR, SWITCH_VERIFIED } from '../constants/action-types'
 
 const iniitialState = {
     test: [],
@@ -31,6 +31,13 @@ function rootReducer(state = iniitialState, action) {
             ...action.payload
         }
     }
+    if (action.type === SWITCH_VERIFIED) {
+        return {
+            ...state,
+            ...action.payload
+        }
+    }
+
     return state
 }
 

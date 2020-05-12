@@ -1,4 +1,4 @@
-import { ADD_TEST, GET_REVIEWS, SORT_STAR } from '../constants/action-types'
+import { ADD_TEST, GET_REVIEWS, SORT_STAR, SWITCH_VERIFIED } from '../constants/action-types'
 import axios from 'axios'
 
 
@@ -20,6 +20,13 @@ export const getReviews = () => (dispatch, getState) => {
 export function sortByStar(payload) {
     return {
         type: SORT_STAR,
+        payload
+    }
+}
+
+export function switchVerified(payload) {
+    return {
+        type: SWITCH_VERIFIED,
         payload
     }
 }
