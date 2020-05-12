@@ -1,25 +1,29 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import { getReviews, changeSort } from '../actions/index';
 
+
+const mapStateToProps = state => {
+  return { ...state }
+}
 
 class Sort extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            sort: '/reviews'
-        }
         this.handleChange = this.handleChange.bind(this)
     }
     handleChange(e) {
-        this.setState({
+        this.props.changeSort({
             sort: e.target.value
         })
+        this.props.getReviews()
     }
     render() {
         return (
             <div className="sort-parent-div">
                 <label className="sort-title"><b>Sort by</b></label>
                 <div className="dropdown-wrapper">
-                    <select className="sort-dropdown" onChange={this.props.changeSort()}>
+                    <select className="sort-dropdown" onChange={this.handleChange}>
                         <option value="/reviews" >Most Relevant</option>
                         <option value="/reviews/help" >Most Helpful</option>
                         <option value="/reviews/recent" >Most Recent</option>
@@ -34,4 +38,7 @@ class Sort extends React.Component {
     }
 }
 
-export default Sort
+export default connect(
+  mapStateToProps,
+  { getReviews, changeSort }
+)(Sort)

@@ -1,4 +1,4 @@
-import { ADD_TEST, GET_REVIEWS, SORT_STAR, SWITCH_VERIFIED } from '../constants/action-types'
+import { ADD_TEST, GET_REVIEWS, SORT_STAR, SWITCH_VERIFIED, CHANGE_SORT } from '../constants/action-types'
 
 const iniitialState = {
     test: [],
@@ -21,7 +21,7 @@ function rootReducer(state = iniitialState, action) {
     if (action.type === GET_REVIEWS) {
         return {
             ...state,
-            reviews: state.reviews.concat(action.payload)
+            reviews: [...action.payload]
         }
     }
 
@@ -31,7 +31,15 @@ function rootReducer(state = iniitialState, action) {
             ...action.payload
         }
     }
+
     if (action.type === SWITCH_VERIFIED) {
+        return {
+            ...state,
+            ...action.payload
+        }
+    }
+
+    if (action.type === CHANGE_SORT) {
         return {
             ...state,
             ...action.payload

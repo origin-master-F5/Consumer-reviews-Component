@@ -102,9 +102,7 @@ class App extends React.Component {
                         </div> */}
                         <Snapshot />
                         <Gallery reviews={this.state.reviews} />
-                        <Filter
-                            changeSort={() => this.changeSort}
-                        />
+                        <Filter />
                         <Review />
                     </div>
                 </div>
