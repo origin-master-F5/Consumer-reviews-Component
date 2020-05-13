@@ -1,21 +1,21 @@
 import React from 'react';
 import Comment from './Comment.jsx';
 import ReviewEntry from './ReviewEntry.jsx';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => {
+  return { ...state }
+}
 
 class Review extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            cutBy: 0,
+            cutBy: 8,
             showMore: false
         }
         this.handleClick = this.handleClick.bind(this)
-    }
-    componentDidMount() {
-        this.setState({
-            cutBy: 8
-        })
     }
     handleClick() {
         this.setState({
@@ -161,4 +161,6 @@ class Review extends React.Component {
     }
 }
 
-export default Review
+export default connect(
+  mapStateToProps
+)(Review)

@@ -6,14 +6,12 @@ import Search from './Search.jsx';
 class Filter extends React.Component {
     constructor(props) {
         super(props)
-
-        this.state = {}
     }
     render() {
         return (
             <div className="filter-parent-div bottom-border-line">
-                <Verified switchVerified={this.props.switchVerified} reviews={this.props.reviews}/>
-                <Search changeSort={this.props.changeSort}/>
+                <Verified />
+                <Search />
             </div>
         );
     }

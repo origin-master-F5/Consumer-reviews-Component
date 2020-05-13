@@ -9,30 +9,13 @@ import ProConList from './ProConList.jsx'
 class Snapshot extends React.Component {
     constructor(props) {
         super(props)
-
-        this.state = {}
     }
     render() {
         return (
             <div className="snapshot-parent-div">
-                <Summary 
-                    rateAvg={this.props.rateAvg}
-                    count={this.props.count} 
-                    wouldRecommend={this.props.wouldRecommend}
-                    starAvg={this.props.starAvg}
-                />
+                <Summary />
                 <div className="snapshot-spacer"><p> </p></div>
-                <BarGraph 
-                    sort={this.props.sort} 
-                    count={this.props.count} 
-                    sku={this.props.sku}
-                    sortByStar={(star) => this.props.sortByStar(star)}
-                    fiveStar={this.props.fiveStar}
-                    fourStar={this.props.fourStar}
-                    threeStar={this.props.threeStar}
-                    twoStar={this.props.twoStar}
-                    oneStar={this.props.oneStar}
-                />
+                <BarGraph />
                 <div className="snapshot-spacer"><p> </p></div>
                 <ProConList />
             </div>

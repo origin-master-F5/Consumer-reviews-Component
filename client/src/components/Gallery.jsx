@@ -1,13 +1,17 @@
 import React from 'react';
 import Pic from './Pic.jsx';
+import { connect } from 'react-redux'
 
+
+const mapStateToProps = state => {
+  return { ...state }
+}
 
 class Gallery extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            reviews: [],
             margin: 0
         }
         this.scrollRight = this.scrollRight.bind(this)
@@ -61,4 +65,6 @@ class Gallery extends React.Component {
     }
 }
 
-export default Gallery
+export default connect(
+  mapStateToProps
+)(Gallery)

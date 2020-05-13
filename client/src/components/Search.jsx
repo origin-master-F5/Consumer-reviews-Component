@@ -33,7 +33,7 @@ class Search extends React.Component {
                         </button>
                     </form>
                 </div>
-                <Sort changeSort={this.props.changeSort}/>
+                <Sort />
             </div>
 
         );
