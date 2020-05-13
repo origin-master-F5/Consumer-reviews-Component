@@ -1,14 +1,5 @@
-import { ADD_TEST, GET_REVIEWS, SORT_STAR, SWITCH_VERIFIED, CHANGE_SORT, CHANGE_SKU } from '../constants/action-types'
+import { GET_REVIEWS, SORT_STAR, SWITCH_VERIFIED, CHANGE_SORT, CHANGE_SKU } from '../constants/action-types'
 import axios from 'axios'
-
-
-export function addTest(payload) {
-    console.log('addTest works')
-    return {
-        type: ADD_TEST,
-        payload
-    }
-}
 
 export const getReviews = () => (dispatch, getState) => {
     const { sort, sku } = getState()
