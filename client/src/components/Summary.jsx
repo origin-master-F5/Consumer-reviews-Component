@@ -13,7 +13,8 @@ class Summary extends React.Component {
   getRateAvg(arr) {
       let rateCount = 0;
       arr.forEach((review) => rateCount += review.rating)
-      return Math.round((rateCount / arr.length) * 10) / 10
+      let avg = Math.round((rateCount / arr.length) * 10) / 10
+      return avg.toString()
   }
   getStarAvg(arr) {
     let starCount = 0;
@@ -24,7 +25,7 @@ class Summary extends React.Component {
     let trueCount = 0;
     arr.forEach((review) => {
       if (review.recommended) {
-      trueCount++
+        trueCount++
       }
   })
     return Math.round((trueCount / arr.length) * 100)
